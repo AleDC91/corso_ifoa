@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giorno 2</title>
+  </head>
+  <body>
+    <h1>Table</h1>
+    <h3>con thed, tbody e tfoot</h3>
+
+    <table border="1">
+      <!-- non va messo border qui dov'è ora, ma in CSS -->
+      <caption>
+        La mia tabella
+      </caption>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Cognome</th>
+          <th>Città</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mario</td>
+          <td>Rossi</td>
+          <td>Roma</td>
+        </tr>
+        <tr>
+          <td>Giuseppe</td>
+          <td>Verdi</td>
+          <td>Milano</td>
+        </tr>
+        <tr>
+          <td>Francesca</td>
+          <td>Neri</td>
+          <td>Napoli</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Tot.</td>
+          <td>3</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <hr />
+
+    <h1>Form</h1>
+
+    <form method="post" action="codice.php" autocomplete="on">
+      <fieldset>
+        <legend>Il mio form</legend>
+
+        <label for="username">Nome utente</label>
+        <input type="text" name="username" id="username" autofocus />
+        <br />
+
+        <label for="cognome">Cognome</label>
+        <input type="text" name="cognome" id="cognome" />
+        <br />
+
+        <label for="eta">Eta</label>
+        <input type="number" name="eta" id="eta" />
+        <br />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="latuamail@example.it"
+        />
+        <br />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+        <br />
+
+        <!-- tel permette anche di fare chiamate, non solo salvare il numero! -->
+        <label for="tel">tel</label>
+        <input type="tel" name="tel" id="tel" />
+        <br />
+
+        <label for="date">data</label>
+        <input type="date" name="date" id="date" />
+        <br />
+        <textarea name="commento" id="commento" cols="30" rows="10">
+placeholder</textarea
+        ><br />
+        <label for="linguaggi">Linguaggi conosciuti</label>
+        <select name="linguaggi" id="linguaggi">
+          <optgroup label="linguaggi">
+            <option value="php">php</option>
+            <option value="python">python</option>
+            <option value="javascript">javascript</option>
+          </optgroup>
+          <optgroup label="frameworks">
+            <option value="laravel">laravel</option>
+            <option value="react">react</option>
+          </optgroup>
+        </select>
+        <br />
+        <!-- reset -->
+        <button type="reset">reset</button>
+
+        <!-- submit -->
+        <button type="submit">invia</button>
+      </fieldset>
+    </form>
+    <br />
+    <!-- video -->
+    <video controls loop muted>
+      <source src="webinar.ogg" type="audio/ogg" />
+      <source src="webinar.mp4" type="audio/mp4" />
+    </video>
+    <br />
+
+    <!-- audio -->
+    <audio controls loop muted>
+      <source src="webinar.ogg" type="audio/ogg" />
+      <source src="webinar.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- picture -->
+    <picture>
+      <!-- va in ordine e carica a seconda del viewport. ottimizzazione! -->
+      <source media="(min-width:1200px)" srcset="immagineBig.jpg" />
+      <source media="(min-width:768px)" srcset="immagineMin.jpg" />
+      <img src="immagine.jpg" alt="foto prodotto" />
+    </picture>
+    <br />
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22266.88009956578!2d11.706294515578627!3d45.763974837787494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4778da83832fc6bb%3A0x4a8087d14460dc7f!2s36061%20Bassano%20del%20Grappa%2C%20Province%20of%20Vicenza!5e0!3m2!1sen!2sit!4v1698144877225!5m2!1sen!2sit"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+    <!-- 
+        inizio esempio struttura sito con contenitori generici, 
+    non più usato, google non ci capirebbe nulla. serve semantica
+ -->
+    <div id="header">
+      <div id="nav">
+        <!-- logo e menu di navigazione -->
+      </div>
+    </div>
+    <div id="main">
+      <!-- contenuto della pagina -->
+    </div>
+    <div id="footer">
+      <!-- riferimenti e indirizzi -->
+    </div>
+    <!-- fine esempio struttura sito con contenitori generici -->
+
+
+    <!-- 
+        inizio esempio struttura sito con contenitori semantici 
+    (header, main, nav, section, article, aside, footer) 
+    molto meglio SEO.
+    -->
+    <header>
+        <nav>
+            <!-- logo e menu di navigazione -->
+        </nav>
+    </header>
+    <main>
+        <!-- contenuto della pagina -->
+        <section>
+            <!-- contenuto principale della pagina -->
+        </section>
+        <aside>
+            <!-- contenuto secondario, collegato al principale, ma meno importante -->
+        </aside>
+        <article>
+            <!-- primo contenuto indipendente della pagina -->
+        </article>
+        <article>
+            <!-- secondo contenuto indipendente della pagina -->
+        </article>
+        <article>
+            <!-- terzo contenuto indipendente della pagina -->
+        </article>
+    </main>
+    <footer>
+      <!-- riferimenti e indirizzi -->
+    </footer>
+    <!-- fine esempio struttura sito con contenitori semantici -->
+
+
+
+
+  </body>
+</html>
