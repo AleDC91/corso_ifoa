@@ -18,6 +18,7 @@
       </figure>
       <nav>
         <ul>
+            <!-- errore -> cambia ordine <li> e <a> altrimenti premi tutta la riga-->
           <a href="#"><li>Home</li></a>
           <a href="#"><li>Articoli</li></a>
           <a href="#"><li>Lavora con noi</li></a>
@@ -28,6 +29,8 @@
     <main>
       <section>
         <article>
+
+            <!-- il titolo principale deve essere <h1> -->
           <h2>Come creare un template per i post</h2>
           <h4>di Mario Rossi - <i>pubblicato il 25-10-2020</i></h4>
           <p>
@@ -110,22 +113,15 @@
 
           <p>
             Un test di valutazione potrà essere effettuato tramite il tool
-            online <a href="#" target="_blank"> -TOOL ESTERNO-</a> dedicato allo
-            scopo. Una volta ottimizzato il tutto, avremo raggiunto il nostro
-            obiettivo ed essere stati dei veri developers come loro:
-          </p>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/ZRTNHDd0gL8?si=_4F2v6-Y5aTv1yna"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+            online <a href="#" target="_blank"> -TOOL ESTERNO-</a> dedicato allo scopo. Una
+            volta ottimizzato il tutto, avremo raggiunto il nostro obiettivo ed
+            essere stati dei veri developers come loro:
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZRTNHDd0gL8?si=_4F2v6-Y5aTv1yna" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </article>
+    
       </section>
-      <!-- form -->
+    <!-- form -->
       <div>
         <p>
           Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla
@@ -136,6 +132,7 @@
             <legend>Iscriviti alla newsletter!</legend>
 
             <label for="email"></label>
+            <!-- errore! aggiungi nome! anche required -->
             <input type="email" placeholder="mariorossi@example.com" />
             <button type="submit">"Iscriviti!"</button>
           </fieldset>
@@ -145,6 +142,8 @@
     <!-- aside -->
     <aside>
       <h3>Titoli Correlati</h3>
+
+      <!-- meglio se usi <div> invece di <article> -->
       <article>
         <a href="#"><h4>Validare il codice HTML</h4></a>
         <h5>categoria: develop</h5>
@@ -163,14 +162,10 @@
     </aside>
     <!-- footer -->
     <footer>
-      <p>Blog Epicode &copy;2023</p>
-      <p>
-        Testata online di Mario Rossi, registrata con prot. n.213/2018 - via
-        Luigi Einaudi 2 - Milano. P. IVA 00112233.
-      </p>
-      <p>
-        Send me an email! <a href="mailto:info@epicode.school"> -LINK EMAIL-</a>
-      </p>
+        <p>Blog Epicode &copy;2023</p>
+        <!-- errore: manca <address> -->
+        <p>Testata online di Mario Rossi, registrata con prot. n.213/2018 - via Luigi Einaudi 2 - Milano. P. IVA 00112233.</p>
+        <p>Send me an email! <a href="mailto:info@epicode.school"> -LINK EMAIL-</a></p>
     </footer>
   </body>
 </html>
