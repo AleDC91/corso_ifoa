@@ -1,0 +1,101 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header img {
+  width: 20%;
+}
+
+header p {
+  width: 100%;
+  color: #004d4c;
+  padding: 1.2rem;
+  border-top: 2px solid #ffd877;
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+header p span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+main {
+  min-width: 300px;
+  max-width: 900px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-container p {
+  font-size: 0.85rem;
+}
+h1 {
+  font-size: 2rem;
+  width: 90%;
+  text-align: center;
+}
+video {
+  border-radius: 10px;
+  width: fit-content;
+  box-shadow: 5px 5px 5px rgb(221, 221, 221);
+}
+
+video + p {
+  color: #999999;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.featured {
+  border-left: 2px solid #ffd877;
+  padding-left: 1rem;
+  align-self: flex-start;
+  margin: 1rem 0;
+  width: 100%;
+  text-align: left;
+}
+
+.featured h4 {
+  color: #b5460f;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.recipe h4 {
+  text-transform: capitalize;
+  padding: 1.5rem;
+  border-bottom: 1px solid #c4f3f2;
+}
+
+.recipe-container {
+  width: 100%;
+}
+.top {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.read-more a{
+    color: #107777;
+}

@@ -1,0 +1,62 @@
+/*  CSS esterno */
+
+/* selettore universale. seleziona tutti gli elementi della pagina */
+*{
+font-family: 'Courier New', Courier, monospace;
+}
+
+/* selettore di Tipo o selettore di base o di tag */
+p{
+    color: aquamarine;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* selettore di gruppo */
+p, h3{
+    text-transform: uppercase;
+}   
+
+/* selettore di ID. UNIVOCO */
+#rosso{
+    color: rgb(255, 0, 0);
+    text-decoration: overline;
+}
+
+/* selettore di CLASSE. 
+Piu elementi che condividono lo stesso stile */
+
+.primary{
+    color: green;
+    text-decoration: line-through;
+}
+.txt{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(210, 177, 240);
+}
+
+/*  !important ha priorità su tutto */
+p{
+    color: orange !important;
+}
+
+article{
+    font-size: 16px;
+}
+
+/* primo elemento di tipo article */
+article:first-child{
+    background-color: black;
+}
+
+
+/* ultimo elemento di tipo article */
+article:last-child{
+    background-color: black;
+}
+
+/* not */
+article :not(p){
+    color: blueviolet;
+    background-color: yellow;
+}

@@ -1,0 +1,69 @@
+article {
+  font-size: 40px;
+}
+
+/* selettore discendenti
+TUTTI i P dentro article, il grado di annidamento non conta */
+article p {
+  font-size: 80%;
+}
+
+/* selettore figli diretti */
+
+article > p {
+  font-size: 0.9rem;
+  color: red;
+}
+
+article a {
+  font-size: 0.8vw;
+  font-variant: small-caps;
+}
+
+/* selettore fratello adiacente
+seleziona a che ha sopra h1 nello stesso contenitore */
+h1 + a{
+color: brown
+}
+
+/* selettore fratelli adiacenti */
+p ~ ul{
+color: crimson;
+}
+
+/* selttore in base ad un attributo 
+tutti gli a che hanno attributo 'title' */
+
+a[title]{
+    color: chartreuse;
+}
+/* selttore in base ad un attributo 
+tutti gli a che hanno attributo 'title' 
+con valore abc 
+posso usare anche regex*/
+a[title="abc"]{
+    color: chartreuse;
+}
+
+
+/* seleziona a fratello di h1 
+discendenti di article figli di main */
+main > article h1 + a{
+color: cadetblue;
+}
+
+article:nth-child(2n+1){
+    border: 3px solid red;
+}
+
+h1::before{
+    content: "- " ;
+    color: red;
+
+}
+
+h1::after{
+    content: " -" ;
+    color: red;
+
+}
