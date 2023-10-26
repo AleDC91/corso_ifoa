@@ -2,9 +2,10 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  line-height: 1.6rem;
+  line-height: 2rem;
   margin: 2rem;
   background-image: url("../img/sfondo.png");
+  font-size: 1.3rem ;
 }
 .container {
   height: 100%;
@@ -30,12 +31,14 @@ header div p {
   text-transform: uppercase;
   color: #ffffff;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.3rem;
   margin-bottom: 2rem;
 }
 
 header nav {
   text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.3rem;
 }
 
 header ul a {
@@ -45,11 +48,10 @@ header ul a {
   font-weight: 700;
 }
 
-header ul {
-}
 
 header ul li {
   margin-top: 0.5rem;
+  line-height: 2rem;
 }
 
 header ul a::before {
@@ -78,7 +80,7 @@ article{
 }
 article h1 {
   font-family: "Poppins", sans-serif;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 500;
   margin-top: 1rem;
   line-height: 2.5rem;
@@ -87,13 +89,13 @@ article h1 {
 article h1 + p {
   color: #b295af;
   margin: 1.5rem 0;
-  font-size: 1.2rem;
+  font-size: 1.rem;
 }
 
 .description {
   line-height: 1.5rem;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 .description strong {
