@@ -1,0 +1,289 @@
+/* IMPOSTAZIONI GENERALI */
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6rem;
+  margin: 2rem;
+  background-image: url("../img/sfondo.png");
+}
+.container {
+  height: 100%;
+  background-color: #ffffff;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(0deg, #186687, #0099cc);
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  box-shadow: 1px 3px 3px grey;
+}
+
+header div {
+  text-align: center;
+}
+header div img {
+  height: 100px;
+  margin: 2rem 0;
+}
+header div p {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+header nav {
+  text-align: center;
+}
+
+header ul a {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+header ul {
+}
+
+header ul li {
+  margin-top: 0.5rem;
+}
+
+header ul a::before {
+  content: "=> ";
+}
+
+header ul a::after {
+  content: " <=";
+}
+
+code {
+  border: 1px solid gray;
+  background-color: #ddeeee;
+  border-radius: 5px;
+  padding: 2px;
+}
+/* MAIN */
+main{
+    background-color: #ffffff;
+}
+
+/* ELEMENTI NEL MAIN - ARTICLE */
+article{
+    box-shadow: 1px 3px 3px grey;
+    padding: 1rem;
+}
+article h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  line-height: 2.5rem;
+  padding-top: 2rem;
+}
+article h1 + p {
+  color: #b295af;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+}
+
+.description {
+  line-height: 1.5rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.description strong {
+  color: #aa2072;
+  font-size: bold;
+}
+
+.des2 {
+  margin-top: 2rem;
+}
+article ul {
+  list-style-type: disc;
+  margin: 2rem;
+}
+article ul li {
+  padding-left: 0.5rem;
+}
+
+h2 + p strong {
+  color: #aa2072;
+}
+
+.formattazione ol {
+  list-style-type: decimal;
+  margin: 1.5rem 0;
+  margin-left: 2rem;
+}
+
+/* TABELLE */
+
+table caption {
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+table thead {
+  background-color: #3366cc;
+}
+
+table thead th {
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid white;
+}
+
+table tbody td {
+  text-align: center;
+  padding: 1rem;
+}
+
+table tbody tr:nth-child(2n + 2) {
+  background-color: #eeeeee;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid rgb(190, 190, 190);
+}
+
+table {
+  border-bottom: 2px solid #3366cc;
+  margin-bottom: 2.5rem;
+}
+
+table + p a {
+  color: #0099cc;
+  font-weight: bold;
+}
+table + p {
+  margin-bottom: 2rem;
+}
+
+.video-container {
+  width: 100%;
+  margin: 0 auto;
+
+}
+iframe {
+  width: 100%;
+  height: 200px;
+
+  border-radius: 20px;
+}
+/* FORM */
+
+
+section{
+    background-color: #ddddde;
+    padding: 1rem 1rem;
+    margin-top: 2.5rem;
+  
+}
+
+section h2{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+section p{
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom:1.2rem;
+    font-size: 1.1rem;
+}
+
+section form input{
+    border: none;
+    width: 70%;
+    height: 1.8rem;
+    border-bottom: 1px dashed black
+
+}
+
+section form button{
+    width: 25%;
+    height: 1.8rem;
+    border-radius:0;
+    box-shadow: 0;
+    background-color: #3366cc;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+section form input::placeholder{
+    font-size: 1rem;
+}
+
+/* ELEMENTI NELL' ASIDE */
+
+aside{
+    padding: 1.2rem;
+}
+aside h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 2rem;
+    margin-bottom: 1rem;
+}
+
+aside div{
+    background-color: #ddddde;
+    border: 1px solid grey;
+    margin-bottom: 1rem;
+    padding:1rem 1rem;
+}
+
+aside div a{
+    color: #01aacd;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+aside div p{
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+aside div p:nth-child(3){
+    text-align: right;
+    margin-bottom:0;
+    font-size: 1rem;
+    font-weight: 400
+}
+
+/* FOOTER */
+footer{
+    background: linear-gradient(0deg, #2a3338, #01778e);
+    margin-top:1.5rem;
+    color: white;
+    padding: 1rem;
+    padding-bottom: 2.5rem;
+    box-shadow: 1px 3px 3px grey;
+}
+
+footer p{
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+footer address{
+    text-align: center;
+}
+
+footer a{
+    color: #ff00fe;
+    font-weight: bold;
+}
