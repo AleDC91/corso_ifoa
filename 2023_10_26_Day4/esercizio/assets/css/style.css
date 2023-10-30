@@ -51,15 +51,15 @@ header ul a {
 
 header ul li {
   margin-top: 0.5rem;
-  line-height: 2rem;
+  line-height: rem;
 }
 
 header ul a::before {
-  content: "=> ";
+  content: "\21D2 \ ";
 }
 
 header ul a::after {
-  content: " <=";
+  content: " \21D0";
 }
 
 code {
@@ -71,11 +71,12 @@ code {
 /* MAIN */
 main{
     background-color: #ffffff;
+    box-shadow: 1px 3px 3px grey;
 }
 
 /* ELEMENTI NEL MAIN - ARTICLE */
 article{
-    box-shadow: 1px 3px 3px grey;
+    
     padding: 1rem;
 }
 article h1 {
@@ -125,6 +126,9 @@ h2 + p strong {
 }
 
 /* TABELLE */
+table{
+    margin: 0 auto; 
+}
 
 table caption {
   font-style: italic;
@@ -143,6 +147,7 @@ table thead th {
   text-align: center;
   padding: 1rem;
   border: 1px solid white;
+  vertical-align: bottom;
 }
 
 table tbody td {
