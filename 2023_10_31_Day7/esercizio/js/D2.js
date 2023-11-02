@@ -137,6 +137,38 @@
 //   console.log(max, med , min)
 // }
 
+
+// VERSIONE CORRETTA DA UMBERTO MOLTO PIU COMPATTA ED ELEGANTE:
+// IMPARA!
+
+// let x = 10;
+// let y = 15;
+// let z = 25;
+
+// if (x > y) {
+//   if (z > x) {
+//     console.log(z, x, y);
+//   } else {
+//     if (z > y) {
+//       console.log(x, z, y);
+//     } else {
+//       console.log(x, y, z);
+//     }
+//   }
+// } else if (y > x) {
+//   if (z > y) {
+//     console.log(z, y, x);
+//   } else {
+//     if (z > x) {
+//       console.log(y, z, x);
+//     } else {
+//       console.log(y, x, z);
+//     }
+//   }
+// }
+
+
+
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
 */
@@ -224,6 +256,24 @@ if (val < 10) {
 //   }
 // }
 
+// LA VERSIONE CORRETTA DA UMBERTO È QUESTA:
+// CONSIDERA COME <10 SOLO I COMPRESI TRA 5 E 10.
+
+// IL PUNTO IMPORTANTE È CHE QUANDO VIENE VERIFICATA UNA CONDIZIONE
+// IN UN UN BLOCCO IF/ELSE IF/ ELSE, LE CONDIZIONI SUCCESSIVE 
+// A QUELLA VERIFICATA VENGONO SALTATE
+
+
+// let val = 15;
+
+// if (val < 5){
+//   console.log("Meno di 5");
+// } else if (val < 10){
+//   console.log("Meno di 10");
+// } else {
+//   console.log("maggiore o uguale a 10");
+// }
+
 /* ESERCIZIO 11
   Fornito il seguente oggetto, scrivi del codice per aggiungere una proprietà "city", il cui valore sarà "Toronto".
 */
@@ -277,10 +327,49 @@ const me = {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-// let arr = [];  //volendo potrei fare anche let arr = new Array();
+let arr = [];  //volendo potrei fare anche let arr = new Array();
 
-// arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(arr);
+
+// CORREZIONE UMBERTO:
+// uso i metodi degli array, giustamente potrei non sapere
+// i valori contenuti nell'array.
+// in più potrei anche usare const invece di let. 
+
+
+// let arr = [];
+// arr[0] = 1;
+// arr[1] = 2;
+// arr[2] = 3;
+// arr[3] = 4;
+// arr[4] = 5;
+// arr[5] = 6;
+// arr[6] = 7;
+// arr[7] = 8;
+// arr[8] = 9;
+// arr[9] = 10;
+
 // console.log(arr);
+
+// // oppure:
+
+// arr.push(1);
+// arr.push(2);
+// arr.push(3);
+// arr.push(4);
+// arr.push(5);
+// arr.push(6);
+// arr.push(7);
+// arr.push(8);
+// arr.push(9);
+// arr.push(10);
+
+// // oppure
+// arr.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+
+
 
 /* ESERCIZIO 15
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
@@ -288,4 +377,9 @@ const me = {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 // arr.splice((arr.length - 1), 1, 100);
+// console.log(arr);
+
+// altra versione della correzione
+
+// arr[arr.length - 1] = 100;
 // console.log(arr);
