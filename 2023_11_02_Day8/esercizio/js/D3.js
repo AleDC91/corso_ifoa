@@ -104,7 +104,7 @@ const starWarsCharacters = [
 /* ESERCIZIO 1
   Crea una variabile chiamata "characters" e assegnale un array vuoto
 */
-const characters = [];
+let characters = [];
 
 /* ESERCIZIO 2
   Utilizzando un ciclo for, cicla l'array "starWarsCharacters".
