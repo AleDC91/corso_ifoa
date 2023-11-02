@@ -251,3 +251,7 @@ console.log(arr);
 
 arr[arr.length - 1] = 100;
 console.log(arr);
+
+// oppure:
+arr.splice((arr.length - 1), 1, 100);
+console.log(arr);
