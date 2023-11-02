@@ -251,7 +251,8 @@ casualIndex = Math.floor(Math.random() * 10);
 console.log(casualIndex);
 
 hairString = (starWarsCharacters[casualIndex].hair_color === 'n/a') ? "It doesn't have any hair" : "It has " + starWarsCharacters[casualIndex].hair_color + " hair"; 
-heightString = (starWarsCharacters[casualIndex].height < 100) ? starWarsCharacters[casualIndex].height + " cm" : starWarsCharacters[casualIndex].height/100 + " m";
+heightString = (starWarsCharacters[casualIndex].height < 100) ? starWarsCharacters[casualIndex].height + "cm" : starWarsCharacters[casualIndex].height/100 + "m";
+birthString = (starWarsCharacters[casualIndex].birth_year === 'unknown') ? "We don't know when it was born/built" : "It was born in " + starWarsCharacters[casualIndex].birth_year + "I don't know in which system.."
 
-console.log(`The character you haven't choose is${starWarsCharacters[casualIndex].name}. It is ${heightString} tall and its weight is ${starWarsCharacters[casualIndex].mass} Kg. He was born in ${starWarsCharacters[casualIndex].birth_year}, don't ask me in which system. ${hairString}, ${starWarsCharacters[casualIndex].eye_color} eyes and its skin is ${starWarsCharacters[casualIndex].skin_color}. We think its gender is ${starWarsCharacters[casualIndex].gender}, but we never know...`)
+console.log(`The character you haven't choose is ${starWarsCharacters[casualIndex].name}. It is ${heightString} tall and its weight is ${starWarsCharacters[casualIndex].mass}Kg. ${birthString}. ${hairString}, ${starWarsCharacters[casualIndex].eye_color} eyes and its skin is ${starWarsCharacters[casualIndex].skin_color}. We think its gender is ${starWarsCharacters[casualIndex].gender}, but we never know...`)
 
