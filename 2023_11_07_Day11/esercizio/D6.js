@@ -338,9 +338,8 @@ console.log("--------------------");
 
 function sumMovieYears(arr){
   let sum = arr.reduce((total, current) => {
-    let year = parseInt(current.Year)
-    total + year, 0
-  });
+    return total + Number(current.Year);
+  }, 0);
   return sum;
 }
 
