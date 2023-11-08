@@ -42,7 +42,6 @@ console.log("----Esercizio 3-----");
 console.log("--------------------");
 
 function evenElements(arr) {
-  let filtered = [];
   return arr.filter((ele) => ele % 2 === 0);
 }
 
