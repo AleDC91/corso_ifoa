@@ -36,7 +36,9 @@
   <body>
     <div>
       <h1 onclick="makeItClickable()">Questo è il titolo della pagina</h1>
-      <h2 onclick="changeColorWithRandom()">Questo è il sottotitolo della pagina</h2>
+      <h2 onclick="changeColorWithRandom()">
+        Questo è il sottotitolo della pagina
+      </h2>
     </div>
 
     <div>
@@ -83,12 +85,12 @@
       /* ESERCIZIO 1
        Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
     */
-   let title = document.querySelector('h1');
+      let title = document.querySelector("h1");
 
       const changeTitle = function () {
         title.innerText = "Titolo modificato";
-        console.dir(title)
-      }
+        console.dir(title);
+      };
       changeTitle();
 
       /* ESERCIZIO 2
@@ -96,7 +98,7 @@
     */
       const addClassToTitle = function () {
         title.classList.add("myHeading");
-      }
+      };
       addClassToTitle();
 
       /* ESERCIZIO 3
@@ -106,45 +108,46 @@
       const changePcontent = function (txt) {
         let pInDiv = document.querySelectorAll("div p");
         // console.log(pInDiv);
-        pInDiv.forEach((p) => p.innerText = txt);
-      }
-      changePcontent('nuovo testo in p');
+        pInDiv.forEach((p) => (p.innerText = txt));
+      };
+      changePcontent("nuovo testo in p");
 
       /* ESERCIZIO 4
        Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
       */
       const changeUrls = function () {
-        let aLink = document.querySelectorAll('a:not(footer a)')
+        let aLink = document.querySelectorAll("a:not(footer a)");
         console.log(aLink);
-        aLink.forEach(a => a.attributes.href.value = "https://www.google.com")
-       
-      }
-      changeUrls()
+        aLink.forEach(
+          (a) => (a.attributes.href.value = "https://www.google.com")
+        );
+      };
+      changeUrls();
 
       /* ESERCIZIO 5
        Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
     */
 
       const addToTheSecond = function (txt) {
-        let secondList = document.querySelector('ul:last-of-type');
-        let newLi = document.createElement('li');
+        let secondList = document.querySelector("ul:last-of-type");
+        let newLi = document.createElement("li");
         newLi.innerText = txt;
         // console.log(newLi);
-        secondList.appendChild(newLi)
-      }
-      addToTheSecond('nuovo Elemento!!!');
+        secondList.appendChild(newLi);
+      };
+      addToTheSecond("nuovo Elemento!!!");
 
       /* ESERCIZIO 6
        Scrivi una funzione che aggiunga un paragrafo al primo div
     */
 
       const addParagraph = function (txt) {
-        let firstDiv = document.querySelector('div');
+        let firstDiv = document.querySelector("div");
         // console.log(firstDiv);
-        let newP = document.createElement('p');
+        let newP = document.createElement("p");
         newP.innerText = txt;
-        firstDiv.appendChild(newP)
-      }
+        firstDiv.appendChild(newP);
+      };
       addParagraph("Testo del nuovo paragrafo");
 
       /* ESERCIZIO 7
@@ -152,23 +155,22 @@
     */
 
       const hideFirstUl = function () {
-        let firstList = document.querySelector('ul');
+        let firstList = document.querySelector("ul");
         // console.log(firstList)
-        firstList.style.display = 'none'
-      }
+        firstList.style.display = "none";
+      };
       // hideFirstUl(); // commenta per verificare esercizio successivo
-
 
       /* ESERCIZIO 8 
        Scrivi una funzione che renda verde il background di ogni lista non ordinata
       */
 
       const paintItGreen = function () {
-        let allLists = document.querySelectorAll('ul');
-        allLists.forEach(list => list.style.backgroundColor = "green")
-      }
+        let allLists = document.querySelectorAll("ul");
+        allLists.forEach((list) => (list.style.backgroundColor = "green"));
+      };
 
-      paintItGreen()
+      paintItGreen();
 
       /* ESERCIZIO 9
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
@@ -177,95 +179,92 @@
       const makeItClickable = function () {
         // uso title definito globalmente
         title.innerText = title.innerText.slice(0, -1);
-      }
-
+      };
 
       /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
       */
 
       const revealFooterLink = function () {
-        let footerLink = document.querySelector('footer a')
-          let linkAdd = footerLink.attributes.href.value;
-          alert(linkAdd);
-      }
+        let footerLink = document.querySelector("footer a");
+        let linkAdd = footerLink.attributes.href.value;
+        alert(linkAdd);
+      };
 
       /* ESERCIZIO 11
        Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
+    //non ho inserito tutti i tag necessari (thead, tbody), ma funziona
+
       const generateTable = function () {
-        let tableArea = document.querySelector('#tableArea');
-        let table = document.createElement('table');
-        
+        let tableArea = document.querySelector("#tableArea");
+        let table = document.createElement("table");
+
         table.style.border = "1px solid black";
         table.style.width = "100%";
-        table.style.height = '300px'
+        table.style.height = "300px";
         console.dir(table);
-        for(let i = 1; i <= 6; i++){
+        for (let i = 1; i <= 6; i++) {
           const tr = table.insertRow();
-          for(let j = 1; j <= 4; j++){
-              if (i === 1){
-                th = document.createElement('th');
-                tr.appendChild(th);
-                tr.style.border = "1px solid black";
-                tr.style.backgroundColor = 'blue'
-                tr.style.color = 'white'
-              } else {
+          for (let j = 1; j <= 4; j++) {
+            if (i === 1) {
+              th = document.createElement("th");
+              tr.appendChild(th);
+              tr.style.border = "1px solid black";
+              tr.style.backgroundColor = "blue";
+              tr.style.color = "white";
+            } else {
               const td = tr.insertCell();
-              td.style.border = "1px solid black"
-              td.innerText = 'testo di prova'
-              }
+              td.style.border = "1px solid black";
+              td.innerText = "testo di prova";
+            }
           }
         }
-        tableArea.appendChild(table)
+        tableArea.appendChild(table);
 
-        console.log(table.rows[0].children[0].innerText = 'immagine')
-        console.log(table.rows[0].children[1].innerText = 'nome_prodotto')
-        console.log(table.rows[0].children[2].innerText = 'quantita')
-        console.log(table.rows[0].children[3].innerText = 'prezzo')
-      
-      
-      }
+        console.log((table.rows[0].children[0].innerText = "immagine"));
+        console.log((table.rows[0].children[1].innerText = "nome_prodotto"));
+        console.log((table.rows[0].children[2].innerText = "quantita"));
+        console.log((table.rows[0].children[3].innerText = "prezzo"));
+      };
       generateTable();
 
-      
       /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
       const addRow = function (...args) {
         console.log(args);
-        let table = document.querySelector('table');
+        let table = document.querySelector("table");
         let tr = table.insertRow();
         // console.log(tr);
-        for(let k = 0; k <= 3; k++){
+        for (let k = 0; k <= 3; k++) {
           const td = tr.insertCell();
-              td.style.border = "1px solid black"
-              td.innerText = args[k]
+          td.style.border = "1px solid black";
+          td.innerText = args[k];
         }
-      }
-      addRow('urlImmagine', 'nome', 12, 350)
+      };
+      addRow("urlImmagine", "nome", 12, 350);
 
       /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
     */
 
       const hideAllImages = function () {
-        let table = document.querySelector('table');
+        let table = document.querySelector("table");
         let allRows = table.rows;
         let list = [...allRows];
 
-        console.log(allRows) ;
+        console.log(allRows);
         list.forEach((row, index) => {
-          if(index !== 0){
-          row.children[0].innerText = ''
-   
-        }
+          if (index !== 0) {
+            row.children[0].innerText = "";
+          }
         });
-      }
-      hideAllImages()
+      };
+      hideAllImages();
       /* EXTRA ESERCIZIO 15
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
     */
@@ -277,21 +276,42 @@
 
         let color = `rgb(${red},${green},${blue})`;
         console.log(color);
-        let h2 = document.querySelector('h2');
+        let h2 = document.querySelector("h2");
         h2.style.color = color;
-      }
+      };
 
       /* EXTRA ESERCIZIO 16
       Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
     */
 
+    //non ho selezionato nel modo corretto, e sarebbe meglio usare le regex
       const deleteVowels = function () {
-      let allElements = document.querySelectorAll('body *');
-      let list = [...allElements]; 
-      let filtered = list.filter( ele => ele.hasOwnProperty('innerText'));
-      console.log(filtered)
-      }
-      deleteVowels()
+        let allElements = document.querySelectorAll("body *");
+        allElements.forEach((ele) => {
+          console.dir(ele);
+          if (
+            ele.innerText !== "" &&
+            ele.children.length === 0 &&
+            ele.tagName !== "SCRIPT"
+          ) {
+            textArr = ele.innerText.split("");
+            console.log(textArr);
+
+            // .filter((letter => letter !== 'a' || letter !== 'e'  || letter !== 'i' || letter !== 'o'  || letter !== 'u')).join("")
+            // ele.innerText = text
+            let filtered = [];
+            for (let i = 0; i < textArr.length; i++) {
+              if ((textArr[i] !== "a") && (textArr[i] !== "e") && (textArr[i] !== "i") && (textArr[i] !== "o") && (textArr[i] !== "u")&& (textArr[i] !== "A")&& (textArr[i] !== "E") && (textArr[i] !== "I") &&(textArr[i] !== "O") && (textArr[i] !== "U")) {
+                filtered.push(textArr[i]);
+              }
+            }
+            // console.log(filtered);
+            let text = filtered.join("");
+            ele.innerText = text;
+          }
+        });
+      };
+      deleteVowels();
     </script>
   </body>
 </html>
