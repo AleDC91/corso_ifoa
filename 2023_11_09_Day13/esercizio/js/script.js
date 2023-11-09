@@ -10,10 +10,11 @@ btn.addEventListener("click", (evt) => {
   let form = document.forms;
   let text = form[0][0].value;
   newTask.innerText = text;
+  if(text){
   task.appendChild(newTask);
   task.appendChild(newDelBtn);
   tasksContainer.appendChild(task);
-
+  }
   form[0][0].value = "";
   let deleteBtns = document.querySelectorAll(".tasks-container button");
   deleteBtns.forEach((btn) => {

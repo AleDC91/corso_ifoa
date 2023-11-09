@@ -35,7 +35,15 @@ form button:hover{
 }
 .tasks-container button{
     cursor: pointer;
+    color: rgb(217, 82, 82);
+    border: 1px solid rgb(217, 82, 82);
+    border-radius: 7px;
 }
+.tasks-container button:hover{
+    background-color: rgb(217, 82, 82);
+    color: #f2fff3;
+}   
+
 .tasks-container p::selection,
 .tasks-container button::selection
 {
@@ -53,13 +61,18 @@ form button:hover{
 
 form input{
     height: 1.5rem;
+    background-color: #f2fff3;
 
 }
-form input:focus{
+form input:active{
     color:rgb(2,0,36);
 }
 h1{
    text-align: center;
    padding-top: 5rem;
    color: rgba(20,46,51,1)
+}
+
+form label{
+    font-size: 1.3rem;
 }
