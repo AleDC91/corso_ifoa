@@ -2,6 +2,7 @@ let tasksContainer = document.querySelector(".tasks-container");
 
 let btn = document.querySelector("form button");
 btn.addEventListener("click", (evt) => {
+    evt.preventDefault();
   let task = document.createElement("div");
   let newTask = document.createElement("p");
   let newDelBtn = document.createElement("button");
@@ -36,3 +37,4 @@ tasksContainer.addEventListener('click', (e) => {
         }
     }
 })
+
