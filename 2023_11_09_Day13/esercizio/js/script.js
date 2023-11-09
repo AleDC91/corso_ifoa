@@ -23,16 +23,15 @@ btn.addEventListener("click", (evt) => {
     });
   });
 
-  let wordsToRemove = document.querySelectorAll(".tasks-container p");
-  wordsToRemove.forEach((word) => {
-    word.addEventListener("click", (evt) => {
-      let textToHide = evt.target;
-
-      if(textToHide.style.textDecorationLine === "line-through"){
-        textToHide.style.textDecorationLine = "";
-      }else{
-        textToHide.style.textDecorationLine = "line-through";
-      }
-    });
-  });
 });
+tasksContainer.addEventListener('click', (e) => {
+    // console.dir(e.target)
+    if(e.target.tagName === "P"){
+        textToHide = e.target;
+        if(textToHide.style.textDecorationLine === ""){
+            textToHide.style.textDecorationLine = "line-through"
+        } else{
+            textToHide.style.textDecorationLine = ""
+        }
+    }
+})
