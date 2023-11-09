@@ -7,32 +7,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Ciao   
-         h1 <span>con uno span</span> 123</h1>
-         <table>
-            <thead>
-                <tr>
-                    <th>header 1</th>
-                    <th>header 2</th>
-                    <th>header 3</th>
-                </tr>
-                <tr>
-                    <td>uno</td>
-                    <td>due</td>
-                    <td>tre</td>
-                </tr>
-                <tr>
-                    <td>quattro</td>
-                    <td>cinque</td>
-                    <td>sei</td>
-                </tr>
-                <tr>
-                    <td>sette</td>
-                    <td>otto</td>
-                    <td>nove</td>
-                </tr>
-            </thead>
-         </table>
-    <script src="js/script.js"></script>
+
+   <button id="btn1" onclick="funClick()">btn1</button> <!-- direttamente sul bottone, sporco HTML -->
+   <button id="btn2">btn2</button>
+   <button id="btn3">btn3</button>
+
+    <form action="">
+        <!-- primo controllo fatto da type attribute di input -->
+        <input type="text" name="nome" placeholder="inserisci nome">
+        <input type="email" name="email"placeholder="inserisci mail">
+        <input type="number" name ="number" placeholder="inserisci number">
+        <button type="submit" value="">invia</button>
+
+    </form>
+
+    <table>
+        <tr id="row1">
+            <td><span>testo 1</span></td>
+            <td><button>Btn1</button></td>
+        </tr>
+        <tr id="row2">
+            <td><span>testo 2</span></td>
+            <td><button>Btn2</button></td>
+        </tr>
+        <tr id="row3">
+            <td><span>testo 3</span></td>
+            <td><button>Btn3</button></td>
+        </tr>
+    </table>
+
+   <script src="js/script.js"></script>
 </body>
 </html>

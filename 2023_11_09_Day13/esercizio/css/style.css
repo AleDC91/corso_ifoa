@@ -1,0 +1,26 @@
+.tasks-container{
+    text-align: center;
+}
+form{
+    text-align: center;
+    margin: 1rem;
+}
+
+
+.tasks-container p {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+.tasks-container button{
+    cursor: pointer;
+}
+.tasks-container p::selection,
+.tasks-container button::selection
+{
+    background: transparent;
+}
+
+.tasks-container span{
+    color: 'red'
+}
