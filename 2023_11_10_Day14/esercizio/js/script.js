@@ -1,4 +1,5 @@
 let cardsContainer = document.querySelector(".schede");
+let extracted = [];
 
 generaTabellone();
 
@@ -13,7 +14,6 @@ function generaTabellone() {
   }
 }
 
-let extracted = [];
 
 let extractBtn = document.querySelector("h1 + button");
 extractBtn.addEventListener("click", () => {
@@ -82,6 +82,7 @@ function buyCards(n) {
   }
   let form = document.querySelector("form");
   form.style.display = "none";
+  extractBtn.removeAttribute('disabled');
 }
 
 function fillCards(n, accArr) {
@@ -109,4 +110,8 @@ function matchNumber() {
     }
   }
     });
+}
+
+function checkAmbo (){
+
 }
