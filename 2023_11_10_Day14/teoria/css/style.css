@@ -1,0 +1,35 @@
+body{
+    background-color: #131334;
+    box-sizing: border-box;
+}
+h1, h2, h3, #appointments{
+    color: #EBEBEB ;
+    text-align:  center;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} 
+
+.container{
+    padding: 1em
+}
+
+.color-epic{
+   color: #7A408A;
+}
+
+/* #calendar, .day{
+     border: 1px solid #7A408A 
+} */
+
+.day{
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0.5em;
+    width: calc(100%/7)
+}
+.selected{
+    background-color: #341d3b;
+}
+#appointments ulS{
+    display: none;
+}

@@ -62,6 +62,7 @@ form button:hover{
 form input{
     height: 1.5rem;
     background-color: #f2fff3;
+    border-radius: 7px;
 
 }
 form input:active{

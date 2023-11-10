@@ -1,0 +1,48 @@
+.body{
+    background: rgb(2,0,36);
+    background: linear-gradient(194deg, rgba(2,0,36,1) 0%, rgba(229,242,224,1) 0%, rgba(5,36,5,1) 84%); }
+
+.cellNumber{
+    display: inline-block;
+    width: 6%;
+    padding:1rem;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 + button{
+    padding: 1rem;
+    border-radius: 0.75rem;
+
+}
+.end{
+    display: none;
+}
+.extracted{
+    background-color: rgb(0, 255, 149);
+}
+.card{
+
+    border: 1px solid red;
+    background: #dccfcf;
+    display: inline-block;
+    margin: 2rem;
+}
+
+.numberInCard{
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 1rem;
+    width: calc(100% / 6);
+    text-align: center;
+    border: 1px solid red;
+
+}
+
+.match{
+    background-color: green;
+}
