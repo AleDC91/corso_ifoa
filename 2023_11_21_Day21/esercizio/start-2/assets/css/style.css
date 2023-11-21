@@ -81,11 +81,11 @@ section h2 {
   text-transform: capitalize;
 }
 
-.img-container img{
-    margin:10px;
-    padding: 5px;
-    height: 50px;
-    box-shadow: 0 0 0 4px #0190B2, 0 0 0 8px rgb(204, 0, 255)
+.img-container img {
+  margin: 10px;
+  padding: 5px;
+  height: 50px;
+  box-shadow: 0 0 0 4px #0190b2, 0 0 0 8px rgb(204, 0, 255);
 }
 
 /* ELEMENTI NEL MAIN - ARTICLE */
@@ -214,118 +214,150 @@ footer a {
 }
 
 @media screen and (min-width: 576px) {
-  body {
-    font-family: url("");
-  }
-  main{
+
+  main {
     padding: 3rem 3rem;
   }
-  header{
+  header {
     font-size: 2rem;
   }
   header nav li {
     padding: 0 1rem;
   }
-  main h1{
+  main h1 {
     font-size: 5.5rem;
     line-height: 1.2;
-    font-weight: bold
+    font-weight: bold;
   }
-  article{
+  article {
     font-size: 1.8rem;
   }
   article h2 {
     font-weight: bold;
   }
-  main article p:first-of-type{
+  main article p:first-of-type {
     font-size: 1.9rem;
   }
-  table{
+  table {
     margin: 6rem auto;
     width: 70%;
-    margin-bottom: 8rem
+    margin-bottom: 8rem;
   }
-  section form fieldset{
+  section form fieldset {
     width: 90%;
   }
-  input#user_email{
+  input#user_email {
     width: 80%;
     margin: 0;
     padding: 1.3rem;
     font-size: 1.1rem;
   }
-  form fieldset button{
+  form fieldset button {
     width: 18%;
     margin: 0;
     padding: 1.3rem;
     font-size: 1.1rem;
-
   }
-  aside h2{
+  aside h2 {
     font-size: 2.5rem;
   }
-  footer{
+  footer {
     font-size: 1.7rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
-    header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2rem 5rem
-    }
-    header div img{
-        margin: 0;
-    }
-    header div{
-        display: flex;
-        align-items: center;
-    }
-    header div p{
-        width: 100%;
-        margin: 0;
-        margin-left: 2rem;
-    }
-    .side-by-side{
-        display: flex;
-        height: 300px
-    }
-    iframe{
-        width:100%
-    }
-    section{
-        width:100%;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    section h2{
-        padding: 1rem;
-        font-weight: 2rem;
-    }
-    section p{
-        line-height: 2.2;
-        }
-        input#user_email{
-            font-size: 1.2rem;
-        }
-        form button{
-            font-size: 1.2rem;
-        }
-        .articoli{
-            display: flex;
-            padding: 0;
-        }
-        .articoli div{
-            width: 100%;
-            margin: 0;
-          
-        }
-        .articoli div p{
-            font-size: 1.8rem;
-            margin-top: 1rem
-        }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
+  }
+  header div img {
+    margin: 0;
+  }
+  header div {
+    display: flex;
+    align-items: center;
+  }
+  header div p {
+    width: 100%;
+    margin: 0;
+    margin-left: 2rem;
+  }
+  .side-by-side {
+    display: flex;
+    height: 300px;
+  }
+  iframe {
+    width: 100%;
+  }
+  section {
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  section h2 {
+    padding: 1rem;
+    font-weight: 2rem;
+  }
+  section p {
+    line-height: 2.2;
+  }
+  input#user_email {
+    font-size: 1.2rem;
+  }
+  form button {
+    font-size: 1.2rem;
+  }
+  .articoli {
+    display: flex;
+    padding: 0;
+  }
+  .articoli div {
+    width: 100%;
+    margin: 0;
+  }
+  .articoli div p {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+}
+
+@media print {
+  body {
+    background: none;
+    font-size: 2.3rem;
+  }
+  header {
+    display: none;
+  }
+  article p:first-of-type {
+    font-size: 2.3rem;
+  }
+  .img-container {
+    position: absolute;
+  }
+  article .img-container + p {
+    display: inline-block;
+    margin-left: 80px;
+  }
+  table tbody tr {
+    border-bottom: 1px solid black;
+  }
+  .side-by-side {
+    display: none;
+  }
+  aside {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  main {
+    background-color: none;
+    box-shadow: none;
+}
 }
