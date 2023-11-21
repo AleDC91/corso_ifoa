@@ -9,6 +9,7 @@ body {
   padding: 15px;
   background-image: url("../img/sfondo.png");
   background-position: center center;
+
 }
 * {
   box-sizing: border-box;
@@ -267,11 +268,21 @@ footer a {
 }
 
 @media screen and (min-width: 1200px) {
+  main{
+    margin-left: 10rem;
+    margin-right: 10rem;
+
+
+  }
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem 5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+
+
   }
   header div img {
     margin: 0;
@@ -326,6 +337,11 @@ footer a {
   }
   table{
     margin: 10rem auto;
+  }
+  footer{
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 2rem;
   }
 }
 
