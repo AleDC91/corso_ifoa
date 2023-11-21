@@ -38,7 +38,7 @@ let obj1 = {
 };
 
 let obj2 = {
-  obj1,
+  ...obj1,
   city: "Milano",
 };
 
@@ -264,11 +264,9 @@ console.log(arrr2);
 
 let arrr3 = [1, 5, 10, 7, 2, 12];
 
-let arr3Filt = arrr3.filter(ele => ele > 5);
+let arr3Filt = arrr3.filter((ele) => ele > 5);
 console.log(arrr3);
 console.log(arr3Filt);
-
-
 
 // REDUCE
 // ------
@@ -286,66 +284,60 @@ console.log(arrReduced);
 // -----------
 // come reduce ma parte da dx
 
-
-
 // EVERY
 // -----
 // restituisce true o false a seconda se TUTTI gli elementi soddisfano una condiizione
 
-let everyEle = arrr3.every(ele => ele > 0);
+let everyEle = arrr3.every((ele) => ele > 0);
 console.log(everyEle);
-let everyEle2 = arrr3.every(ele => ele > 5);
+let everyEle2 = arrr3.every((ele) => ele > 5);
 console.log(everyEle2);
-
 
 // SOME
 // ----
 // restituisce true o false a seconda se ALCUNI gli elementi soddisfano una condiizione
 
-let someEle = arrr3.some(ele => ele > 0);
+let someEle = arrr3.some((ele) => ele > 0);
 console.log(someEle);
-let someEle2 = arrr3.some(ele => ele > 5);
+let someEle2 = arrr3.some((ele) => ele > 5);
 console.log(someEle2);
-
 
 // INDEXOF
 // -------
 // restituisce indice dell'elemento tra parentesi
 
 let indexArr = arrr3.indexOf(10);
-console.log(indexArr)
-
-
+console.log(indexArr);
 
 // FIND e FINDINDEX
 // ----------------
 
 let arrUser = [
-    {
-        id: 1,
-        nome: 'Mario',
-        cognome: 'Rossi',
-        eta: 22,
-        citta: 'Roma'
-    },
-    {
-        id: 2,
-        nome: 'Giuseppe',
-        cognome: 'Verdi',
-        eta: 30,
-        citta: 'Milano'
-    },
-    {
-        id: 3,
-        nome: 'Francesca',
-        cognome: 'Neri',
-        eta: 27,
-        citta: 'Napoli'
-    },
-]
+  {
+    id: 1,
+    nome: "Mario",
+    cognome: "Rossi",
+    eta: 22,
+    citta: "Roma",
+  },
+  {
+    id: 2,
+    nome: "Giuseppe",
+    cognome: "Verdi",
+    eta: 30,
+    citta: "Milano",
+  },
+  {
+    id: 3,
+    nome: "Francesca",
+    cognome: "Neri",
+    eta: 27,
+    citta: "Napoli",
+  },
+];
 
-let user = arrUser.find( u => u.id === 3);
+let user = arrUser.find((u) => u.id === 3);
 console.log(user); // se non trova elemento restituisce UNDEFINED
 
-let index = arrUser.findIndex( u => u.nome === 'Francesca');
+let index = arrUser.findIndex((u) => u.nome === "Francesca");
 console.log(index); // se non c'è, restituisce -1

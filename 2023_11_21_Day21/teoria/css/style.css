@@ -1,0 +1,62 @@
+/* Mobile first!!!! tutto querllo che progetto inizialmente deve essere definito qui
+poi adatto per il resto */
+
+.container{
+    background-color: #eee;
+}
+
+.container h1{
+    color:red;
+}
+
+
+ /* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) { 
+    .container{
+        background-color: #682e2e;
+    }
+    .container h1{
+        color:rgb(148, 46, 46);
+    }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) { 
+    .container{
+        background-color: #2e3468;
+    }
+    .container h1{
+        color:rgb(155, 144, 144);
+    }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .container{
+        background-color: #2e685c;
+    }
+    .container h1{
+        color:rgb(72, 11, 11) !important ;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {     
+    .container{
+       
+    background-color: rgb(58, 104, 46);;
+}
+.container h1{
+    color:rgb(255, 255, 255) !important;
+}
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+    .container{
+        background-color: #682e63;
+    }
+    .container h1{
+        color:rgb(138, 148, 46);
+    }
+ }
