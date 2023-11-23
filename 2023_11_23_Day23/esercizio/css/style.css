@@ -214,7 +214,7 @@ section h2 {
 --------------------MEDIUM SCREEN-------------------------
 ----------------------------------------------------------*/
 
-@media screen and (min-width: 902px) {
+@media screen and (min-width: 1000px) {
   .container {
     display: flex;
     flex-direction: row;

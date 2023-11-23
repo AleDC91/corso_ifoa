@@ -8,11 +8,11 @@ if(width < 576){
     ultimaCard.style.display = 'block';
     penultimaCard.style.display = 'block'
 }
-if(width > 576 && width < 902){
+if(width > 576 && width < 1000){
     ultimaCard.style.display = 'none';
     penultimaCard.style.display = 'block'
 }
-if(width > 902 && width < 1500){
+if(width > 1000 && width < 1500){
     ultimaCard.style.display = 'none';
     penultimaCard.style.display = 'none';
 }
