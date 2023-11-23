@@ -124,6 +124,7 @@ i.fa-caret-square-up{
     display: inline-block;
   }
 
+
   header .brand {
     width: 75%;
   }
@@ -487,4 +488,10 @@ footer a {
 }
 h1{
   margin: 0;
+}
+
+@media screen and (min-width:1700px){
+  .icon-btns{
+    right: 10%;
+  }
 }
