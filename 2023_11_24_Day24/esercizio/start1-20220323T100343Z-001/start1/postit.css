@@ -110,6 +110,6 @@ background: linear-gradient(0deg, rgba(189,189,163,1) 0%, rgba(204,254,206,1) 30
 @keyframes attaccaPostit {
     0%{
         transform: scale(15) translate(200px, -200px);
-        opacity: 0;
+        /* opacity: 0; */
     }
 }
