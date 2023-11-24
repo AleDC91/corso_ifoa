@@ -1,0 +1,95 @@
+/* -------------------------------
+------------ANIMAZIONI------------
+---------------------------------- */
+
+
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    font-size: 2rem;
+
+
+    transition-property: transform;
+    transition-duration: 1000ms;
+    
+
+}
+.box:hover{
+    /* width: 400px; */
+    /* transform: translateX(50px); */  /*SCONSIGLIATO. sedevo usare anche translateY, l'ultimadichiarazione sovrascrive la prima */
+    /* transform: translateY(50px); */  /*SCONSIGLIATO. sedevo usare anche translateX, l'ultimadichiarazione sovrascrive la prima */
+    /* transform: translate(50px, 50px); */ /*USA QUESTO INVECE DELLE DUE SOPRA */
+    
+    /* transform: scaleX(3); */ 
+    /* transform: scaleY(3); */   
+    /* transform: scale(1.2); */
+    /* transform: scale3d(1.5, 1.5, 1.5); */
+    
+    /* transform: rotate(-20deg); */
+    /* transform: rotateX(30deg); */
+    /* transform: rotateY(30deg); */
+    /* transform: rotateZ(30deg); */
+    /* transform: rotate3d(1, 1, 1, 40deg); */
+
+
+    /* transform: skewX(35deg); */
+    /* transform: skewY(40deg); */
+    transform: skew(33deg, 33deg);
+
+    /* transform: matrix(..................); */
+    /* transform-origin: 15% 5%; */
+}
+
+.box2{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin: 50px 0;
+
+
+    /*  transizioni multiple*/
+    transition: width linear 1s, background-color linear 1s;
+}
+
+.box2:hover{
+    width: 400px;
+    background-color: blue;
+}
+
+.box3{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    /* transition-property: width;
+    transition-duration: 2500ms;
+    transition-delay: 200ms;
+    transition-timing-function: ease-in-out; */
+    /* transition-timing-function: cubic-bezier(0,1.87,1,-0.49) */
+    /* transition: name | duration | funciton | delay; */
+    animation: nomeACaso 2000ms ease infinite alternate;
+    
+}
+
+/* .box3:hover{
+    /* transform: scaleX(3); */
+    /* transition: transform 2s ease-in;
+} */
+
+ @keyframes nomeACaso {
+    0%{
+        background-color: yellow;
+    }
+    20%{
+        background-color: green;
+        width: 300px;
+    }
+    70%{
+        background-color: red;
+        width: 100px;
+    }
+    100%{
+        background-color: yellow;
+      
+    }
+ }
