@@ -1,0 +1,72 @@
+/* -------------------------------------
+----------------GRID--------------------
+---------------------------------------- */
+
+
+.container{
+display: grid;
+background-color: rgb(209, 177, 177);
+width: 80%;
+min-height: 250px;
+margin: 0 auto;
+}
+
+.box1{
+    background-color: orangered;
+    /* min-height: 150px; */
+    /* grid-column-start: 1;
+    grid-column-end: 2; */
+    grid-column: 1 / 2;
+    /* grid-row-start: 1;
+    grid-row-end: 2; */
+    grid-row: 1 / 2;
+}
+.box2{
+    background-color: rgb(0, 85, 255);
+    /* min-height: 150px; */
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column: 4/ 5;
+}
+
+.box3{
+    background-color: rgb(0, 255, 0);
+    /* min-height: 150px; */
+    grid-column: 1 / 4;
+}
+.box4{
+    background-color: rgb(0, 255, 255);
+    /* min-height: 150px; */
+    /* grid-column: 2 / 5;
+    grid-row: 2 / 4; */
+
+    grid-area: 2 / 2/ 4 / 5;
+}
+
+
+/* --------------------------------- */
+
+div.header {
+    background-color: rgb(69, 235, 213);   
+    grid-area: pippo;}
+div.main{
+    background-color: pink;
+    grid-area: pluto;
+}
+div.section {
+    background-color: blue;
+    grid-area: topolino;
+}
+
+div.footer{
+    background-color: green;
+    grid-area: paperino;
+}
+
+div.container-area{
+    min-height: 50px;
+    display: grid;
+    grid-template-areas: 'pippo pluto .'
+                         'paperino paperino'
+                         'topolino paperino';
+}
