@@ -1,12 +1,12 @@
 .card img{
-    height: 150px;
+    height: 200px;
 }
 
 .card{
     height: 380px;
 }
 .lastminute-container img{
-    height: 150px;
+    height: 120px;
     width: 100%;
 }
 
@@ -16,6 +16,5 @@
     width: 50px;
 }
 .hide-section{
-display: none;
-
+display: none !important;
 }
