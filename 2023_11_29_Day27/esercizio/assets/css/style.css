@@ -1,0 +1,21 @@
+.card img{
+    height: 150px;
+}
+
+.card{
+    height: 380px;
+}
+.lastminute-container img{
+    height: 150px;
+    width: 100%;
+}
+
+.img-avatar{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+.hide-section{
+display: none;
+
+}
