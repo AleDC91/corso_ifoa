@@ -1,0 +1,14 @@
+@mixin entrataAnimazione($durata, $inizioX, $inizioY) {
+
+    @keyframes entrata {
+        0% {
+            opacity: 0;
+            transform: translate($inizioX, $inizioY);
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    animation: entrata $durata linear;
+}
+   

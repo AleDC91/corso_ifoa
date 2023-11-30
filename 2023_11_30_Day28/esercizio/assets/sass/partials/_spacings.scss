@@ -1,0 +1,109 @@
+header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+nav li {
+  margin: 1rem;
+}
+
+main {
+    margin-bottom: 4rem;
+    @include griglia();
+  padding: 0 7rem 3rem 7rem;
+  p {
+    font-size: $f-medium;
+    width: 80%;
+  }
+  .left {
+    width: 50%;
+    @include entrataAnimazione(1s, -30px, -10px);
+}
+
+.right {
+    width: 50%;
+}
+
+  img {
+    position: relative;
+    top: 50%;
+    @include floating(10px, $shadow-md, white);
+    width: 600px;
+  }
+}
+
+section {
+  @include griglia;
+  img {
+    @include floating(10px, $shadow-sm);
+    width: 22%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  main {
+    margin: 0 auto;
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+    p {
+      text-align: center;
+      margin: 0 auto;
+      padding: 3rem;
+    }
+    .left {
+      width: 100%;
+    }
+    .right {
+      width: 100%;
+      text-align: center;
+      img {
+        position: static;
+        width: 70%;
+        margin-top: 4rem;
+      }
+    }
+  }
+  section {
+    padding: 4rem 0;
+  }
+}
+
+
+@media screen and (max-width: 576px) {
+    .left{
+h1{
+    font-size: $f-medium * 2 ;
+    margin: 0;
+}
+p{
+    font-size: $f-medium * 0.75;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+}
+section{
+
+    @include griglia(column);
+    align-items: center;
+    img{
+        margin: 0.5rem;
+        width: 60%;
+    }
+}
+}
+
+@media screen and (max-width: 450px){
+    .btns{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        button{
+            width: 50%;
+        }
+    }
+}

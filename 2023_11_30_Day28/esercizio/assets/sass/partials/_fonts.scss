@@ -1,0 +1,11 @@
+$ff: Arial, Helvetica, sans-serif;
+$f-small: 20px;
+$f-medium: $f-small * 1.2;
+$f-big: $f-medium * 2;
+
+$f-xl: $f-small * 4;
+$fw-big: bold;
+
+h1 {
+    @include title-big
+  }

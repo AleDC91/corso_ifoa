@@ -1,0 +1,61 @@
+
+
+main a {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-decoration: none;
+}
+
+main a:hover {
+  color: orange;
+}
+
+// -------
+// NESTING
+// -------
+
+// STRUTTURA PIU LEGGIBILE!
+// FUNZIONA ANCHE IL MODO CLASSICO
+// MA COSI
+
+
+
+
+@mixin regolaPersonalizzata{
+    color: goldenrod;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+main {
+  border: 1px solig grey;
+  h1 {
+    @include regolaPersonalizzata;
+    color: red;
+    &.titolo {
+      text-align: center;
+    }
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      background-color: purple;
+    }
+  }
+
+  p {
+    @include regolaPersonalizzata;
+  }
+}
+
+
+
+// BUILT IN METHODS
+// ----------------
+
+// @use 'sass:math'  alla prima riga del file sass principale 
+
+$size: #{math.max(5.4, 80)}px;
+
+h1{
+    font-size: $size;
+}

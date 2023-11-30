@@ -1,0 +1,30 @@
+$textColor: #f4f4f4;
+$buttonBlue: #0e6cff;
+$buttonOrange: #ff8700;
+$buttonGreen: #4caf50;
+
+$bgHero: #640fc5;
+
+$titleColor: darken($bgHero, 20%);
+
+header {
+  background-color: $bgHero;
+  .logo {
+    color: darken($titleColor, 80%);
+  }
+  nav {
+    li {
+      color: #fff;
+    }
+  }
+}
+
+
+
+main {
+  background-color: $bgHero;
+  h1 {
+    color: $titleColor;
+  }
+
+}

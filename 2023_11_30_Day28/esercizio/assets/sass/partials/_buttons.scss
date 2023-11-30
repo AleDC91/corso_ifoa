@@ -1,0 +1,18 @@
+button{
+    border-radius: 6px;
+    padding: 1.2rem;
+    border: 0;
+    color: #fff;
+    margin: 1rem;
+    box-shadow: 2px 2px 3px grey;
+    &:first-child{
+        background-color: $buttonBlue;
+    }
+    &:nth-child(2){
+        background-color: $buttonOrange;
+    }
+    &:nth-child(3){
+        background-color: $buttonGreen;
+    }
+
+}

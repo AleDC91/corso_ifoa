@@ -1,0 +1,18 @@
+html {
+  font-size: 1em;
+}
+
+body {
+  margin: 0;
+  font-family: $ff;;
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+nav li{
+    display: inline-block;
+}

@@ -1,0 +1,60 @@
+@use 'sass:math';
+// importo i partials
+
+
+@import '_header';
+@import '_main';
+@import '_footer';
+
+html{
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(222, 255, 244);
+}
+
+p{
+    color:blue
+}
+
+
+// ---------------------
+// ------VARIABILI------
+// ---------------------
+
+
+// booleano
+// --------
+
+$media: true;
+
+
+
+// set
+// ---
+
+$set-colori: (
+    grigio: #ccc,
+    blu: #00f
+);
+
+// stringa
+// -------
+
+$colore: #f0f;
+$colore2: #2303fa;
+
+// number
+// ------
+
+$size: 25;
+// oppure
+$size2: 1.5em; // --> va bene uguale perchè sono valori css
+
+p{
+    font-size: $size2;  // --> uso direttamente la variabile
+}
+
+// posso usare anche operatori aritmetici
