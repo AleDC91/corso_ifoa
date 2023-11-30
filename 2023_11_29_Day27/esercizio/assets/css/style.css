@@ -18,3 +18,8 @@
 .hide-section{
 display: none !important;
 }
+
+header img{
+    width: 80px;
+
+}
