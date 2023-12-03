@@ -14890,3 +14890,7 @@ body {
 .dropdown-item i {
   padding: 0 0.5rem;
 }
+
+.card {
+  cursor: pointer;
+}
