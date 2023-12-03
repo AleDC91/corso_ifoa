@@ -1,0 +1,79 @@
+/* Style.scss */
+/* partials reset */
+/*colors*/
+body {
+  background-color: lightblue;
+  height: 100vh;
+}
+body h1 {
+  color: #2e7e99;
+}
+body p {
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+body footer h3 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.p-0 {
+  padding: 0em;
+}
+
+.p-1 {
+  padding: 1em;
+}
+
+.p-2 {
+  padding: 2em;
+}
+
+.p-3 {
+  padding: 3em;
+}
+
+.p-4 {
+  padding: 4em;
+}
+
+.p-5 {
+  padding: 5em;
+}
+
+.list-1 {
+  margin-left: 2px;
+}
+
+.list-2 {
+  margin-left: 4px;
+}
+
+.box-0 {
+  border: ipx solid black;
+}
+
+.box-1 {
+  border: ipx solid black;
+}
+
+.box-2 {
+  border: ipx solid black;
+}
+
+.box-3 {
+  border: ipx solid black;
+}
+
+.box-4 {
+  border: ipx solid black;
+}
+
+.box-5 {
+  border: ipx solid black;
+}
+
+h3 {
+  font-size: 1.875em;
+  color: blue;
+}

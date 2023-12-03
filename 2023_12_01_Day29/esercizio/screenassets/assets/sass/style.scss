@@ -1,0 +1,67 @@
+@import "override_bootstrap";
+
+body {
+  background-color: #f5f4f8;
+}
+
+.service-img {
+  aspect-ratio: 1;
+}
+
+.carousel-control-prev {
+  width: 50px;
+  aspect-ratio: 1;
+  left: -50px;
+}
+
+.carousel-control-next {
+  width: 50px;
+  aspect-ratio: 1;
+  right: -50px;
+}
+
+.footer-list li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.bell {
+  width: 40px;
+  height: 40px;
+  .pallino {
+    width: 8px;
+    aspect-ratio: 1;
+    top: 5px;
+    right: 7px;
+    border-radius: 50%;
+  }
+  i{
+    font-size: 0.8em;
+    color: $secondary
+  }
+}
+.user{
+    width: 40px;
+    height: 40px;
+
+    .pallino {
+      width: 8px;
+      aspect-ratio: 1;
+      bottom: 8px;
+      right: -30px;
+      border-radius: 50%;
+    }
+}
+
+.round-icons{
+    right: 20px;
+    top:10px;
+    @media screen and (min-width: 992px) {
+        right: 10px
+    }
+}
+.dropdown-item{
+    i{
+        padding: 0 0.5rem
+    }
+}

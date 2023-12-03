@@ -1,0 +1,128 @@
+// recall existing values, necessary to modify your custom ones
+
+$font-size-base: 1rem;
+$spacer: 1rem;
+
+// custom variables
+
+$lavanda: #7550fe;
+$aquagreen: #1acb98;
+$lightbrown: #ffeeda;
+$brown: #c28135;
+$starsColor: #ffaa46;
+
+$h-big-font-size: $font-size-base * 3;
+$h7-font-size: $font-size-base * 0.875;
+$h8-font-size: $font-size-base * 0.5;
+$h9-font-size: $font-size-base * 0.25;
+
+$carousel-control-color: #6c757d;
+
+// font, anche se non serve
+@font-face {
+  font-family: feather;
+  src: url(../fonts/feather.ttf);
+}
+
+$font-family-base: "Inter", sans-serif;
+
+// custom maps, to merge with the existing ones
+
+$custom-colors: (
+  "lavanda": $lavanda,
+  "aquagreen": $aquagreen,
+  "lightbrown": $lightbrown,
+  "brown": $brown,
+  "blallo": green,
+  "starsColor": $starsColor,
+);
+
+$custom-font-sizes: (
+  big: $h-big-font-size,
+  7: $h7-font-size,
+  8: $h8-font-size,
+  9: $h9-font-size,
+);
+
+$custom-spacers: (
+  1px: 1px,
+  6: $spacer * 3.5,
+  7: $spacer * 4,
+  4m: $spacer * 2.5,
+  2m: $spacer * 0.75,
+);
+
+// import partial to override the default variables that have the !default keyword.
+// it means that is a new variable with that name ios not created, it takes the default bootstrap value.
+
+// also import functions partial to use the bootstrap functions, like map-merge e map-get
+
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+// merge your maps with the default ones to add new values to the default
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$spacers: map-merge($custom-spacers, $spacers);
+$font-sizes: map-merge($font-sizes, $custom-font-sizes);
+
+// import utilities partial to add or modify things using utilities API
+// and other partials used by utilities!!!
+
+@import "../../../node_modules/bootstrap/scss/variables-dark";
+@import "../../../node_modules/bootstrap/scss/maps";
+
+@import "../../../node_modules/bootstrap/scss/utilities";
+
+$newUtilitycursor: (
+  "cursor": (
+    property: cursor,
+    class: cursor,
+    responsive: true,
+    values: auto pointer grab,
+  ),
+);
+
+$newUtilityResponsiveWidth: (
+  "width":
+    map-merge(
+      map-get($utilities, "width"),
+      (
+        responsive: true,
+      )
+    ),
+);
+
+$custom-widths: (
+  10: 10%,
+  12: 12%,
+  15: 15%,
+  20: 20%,
+  30: 30%,
+  40: 40%,
+);
+
+$utilities: map-merge($utilities, $newUtilitycursor);
+$utilities: map-merge($utilities, $newUtilityResponsiveWidth);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "width":
+      map-merge(
+        map-get($utilities, "width"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "width"), "values"),
+              $custom-widths
+            ),
+        )
+      ),
+  )
+);
+
+// import bootstrap to use al the other functionalities
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
