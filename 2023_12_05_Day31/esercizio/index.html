@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esercizio giorno 31</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <div class="mb-3">
+          <label for="nomeAnimale" class="form-label">Nome animale</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nomeAnimale"
+            placeholder="nome animale"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="owner" class="form-label">Nome padrone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="owner"
+            placeholder="padrone"
+          />
+        </div>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Specie</option>
+          <option value="cane">Cane</option>
+          <option value="gatto">Gatto</option>
+          <option value="coniglio">Coniglio</option>
+          <option value="pesce">Pesce</option>
+        </select>
+
+        <select class="form-select mt-3" aria-label="Default select example">
+          <option selected>Razza</option>
+          <option value="labrador">labrador</option>
+          <option value="persiano">persiano</option>
+          <option value="pagliaccio">pagliaccio</option>
+        </select>
+        <button class="btn btn-success mt-3">Salva</button>
+      </form>
+
+      <h3 id="totPets">Totale <span>0</span></h3>
+
+      <div class="listPet mt-5">
+        <ul class="list-group list-group-flush">
+          <!-- <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+          <li class="list-group-item">A fourth item</li>
+          <li class="list-group-item">And a fifth one</li> -->
+        </ul>
+      </div>
+    </div>
+
+
+    <form>
+        <p>id animale a cui cambiare padrone</p>
+      <select id="idCount" class="form-select mt-3" aria-label="Default select example">
+    
+      </select>
+      <div class="mb-3">
+        <label for="nuovoPadrone" class="form-label">Nuovo padrone</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nuovoPadrone"
+          placeholder="nuovo padrone"
+        />
+      </div>
+      <button id="cambia" class="btn btn-warning mt-3">Cambia padrone</button>
+    </form>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/scipt.js"></script>
+  </body>
+</html>
