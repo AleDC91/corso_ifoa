@@ -1,0 +1,15 @@
+button {
+  cursor: pointer;
+}
+
+
+ul {
+    margin-top: 2rem;
+  li {
+    list-style-type: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+}
