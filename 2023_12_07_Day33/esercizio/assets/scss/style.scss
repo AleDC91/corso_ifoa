@@ -1,0 +1,93 @@
+@import "override_bootstrap";
+
+.card {
+  height: 500px;
+  margin: 1rem;
+  padding: 0;
+  box-shadow: 4px 4px 7px grey;
+  img {
+    height: 50%;
+  }
+}
+
+.inCart {
+  border: 4px solid green;
+}
+
+.pallino {
+  background-color: yellow;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 12;
+  text-align: center;
+  color: white;
+}
+.carrello {
+    cursor: pointer;
+  position: fixed;
+  display: inline-block;
+  z-index: 1;
+  background-color: white;
+width: 70px;
+height: 70px;
+border-radius: 50%;
+text-align: center;
+vertical-align: center;
+padding-top: 0.5rem;
+box-shadow: 3px 3px 7px gray;
+i{
+    margin: auto;
+}
+.total{
+    background-color: rgba(0, 255, 30, 0.383);;
+    box-shadow: 0 0 20px 0px rgb(0, 255, 30);
+    border-radius:  2rem;
+}
+}
+
+
+.show-cart {
+    border: 4px solid rgb(0, 55, 128);
+  background-color: rgb(255, 204, 204);
+  height: 80vh;
+  width: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  position: fixed;
+  top: 50px;
+  left: -400px;
+  overflow: auto;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+        div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p{
+                font-weight: bol;
+            }
+        }
+}
+
+
+  .card {
+    height: 300px;
+
+    h5 {
+      font-size: 12px;
+    }
+  }
+  img {
+    height: 30%;
+  }
+}
