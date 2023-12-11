@@ -9,19 +9,26 @@ const primaryQuery = "dolomites";
 const secondaryQuery = "beer";
 const album = document.querySelector(".photos");
 const pagination = document.querySelector("ul.pagination");
-let perPage = 40;
+
+const select = document.querySelector("select");
+
+let perPage = 60;
 let currentURL = window.location.href;
 const main = document.querySelector("main");
 let query = "";
+
+
 window.addEventListener("load", () => {
   if (currentURL.includes("index.html")) {
     loadImagesButton.addEventListener("click", () => {
       query = primaryQuery;
+      perPage = select.value;
       loadPhotos(query, 1, perPage);
     });
 
     loadSecondaryImagesButton.addEventListener("click", () => {
       query = secondaryQuery;
+      perPage = select.value;
       loadPhotos(query, 1, perPage);
     });
 
@@ -41,9 +48,9 @@ window.addEventListener("load", () => {
     document.forms[0].querySelector("button").addEventListener("click", () => {
       query = document.forms[0][0].value;
       loadPhotos(query, 1, perPage);
-
     });
   } else if (currentURL.includes("photoInfo.html")) {
+    perPage = select.value;
     fetchPhoto();
   }
 });
@@ -51,7 +58,7 @@ window.addEventListener("load", () => {
 function loadPhotos(query, page, perPage) {
   album.innerHTML = "";
   const URI = `https://api.pexels.com/v1/search?query=${query}&page=${page}&per_page=${perPage}`;
-  renderPhotos(URI)
+  renderPhotos(URI);
 }
 
 function fetchPhoto() {
@@ -108,27 +115,26 @@ function fillModal(id) {
 }
 
 pagination.addEventListener("click", (e) => {
-
-e.preventDefault();
-album.innerHTML = "";
-renderPhotos(e.target.href)
-// console.log(e.target);
-
-
-})
+  e.preventDefault();
+  album.innerHTML = "";
+  perPage = select.value;
+  renderPhotos(e.target.href);
+  // console.log(e.target);
+});
 
 function renderPhotos(uri) {
+  
   fetch(uri, {
     method: "GET",
     headers: {
       Authorization: PEXELS_API_KEY,
-    }
+    },
   })
     .then((response) => response.json())
     .then((data) => {
       const photos = data.photos;
       console.log(photos);
-        console.log(data);
+      console.log(data);
       photos.forEach((photo) => {
         const card = document.createElement("div");
         card.classList.add("col-md-4", "col-sm-6");
@@ -154,8 +160,6 @@ function renderPhotos(uri) {
           </div>
           `;
         album.appendChild(card);
-
-        
       });
       pagination.innerHTML = "";
       let prev = document.createElement("li");
@@ -167,8 +171,8 @@ function renderPhotos(uri) {
       for (let i = 1; i <= pages; i++) {
         let pageNumber = document.createElement("li");
         pageNumber.classList.add("page-item");
-        if (i === data.page){
-          pageNumber.classList.add("active")
+        if (i === data.page) {
+          pageNumber.classList.add("active");
         }
         pageNumber.innerHTML = `<a class="page-link" href="https://api.pexels.com/v1/search?query=${query}&page=${i}&per_page=${perPage}">${i}</a>`;
         pagination.appendChild(pageNumber);
@@ -177,6 +181,5 @@ function renderPhotos(uri) {
       next.classList.add("page-item");
       next.innerHTML = `<a class="page-link" href="${data.next_page}">Next</a>`;
       pagination.appendChild(next);
-
-    })
+    });
 }
