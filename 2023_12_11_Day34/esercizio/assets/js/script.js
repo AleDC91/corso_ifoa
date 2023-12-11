@@ -5,12 +5,12 @@ const loadSecondaryImagesButton = document.querySelector(
   "#load-secondary-images"
 );
 
-const primaryQuery = "climbing";
+const primaryQuery = "dolomites";
 const secondaryQuery = "beer";
 const album = document.querySelector(".photos");
 
 let currentURL = window.location.href;
-const main = document.querySelector('main')
+const main = document.querySelector("main");
 
 window.addEventListener("load", () => {
   if (currentURL.includes("index.html")) {
@@ -27,10 +27,10 @@ window.addEventListener("load", () => {
       console.log(e.target);
       if (e.target.classList.contains("hide-btn")) {
         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
-      }
-      else if(e.target.classList.contains("view-btn")){
-
-        
+    // view button
+      } else if (e.target.classList.contains("view-btn")) {
+        let id = e.target.dataset.bsTarget;
+        fillModal(id)
       }
     });
 
@@ -39,10 +39,7 @@ window.addEventListener("load", () => {
       loadPhotos(document.forms[0][0].value);
     });
   } else if (currentURL.includes("photoInfo.html")) {
-    
-
     fetchPhoto();
-
   }
 });
 
@@ -71,7 +68,7 @@ function loadPhotos(query) {
                   <h5 class="card-title">${photo.alt}</h5>
                   <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                          <button type="button" class="view-btn btn btn-sm btn-outline-secondary">
+                          <button type="button" class="view-btn btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="${photo.id}">
                               View
                           </button>
                           <button type="button" class="hide-btn btn btn-sm btn-outline-secondary">
@@ -83,19 +80,12 @@ function loadPhotos(query) {
               </div>
           </div>
           `;
-          album.appendChild(card);
-
-
+        album.appendChild(card);
       });
-
-
-
-
     });
 }
 
-async function fetchPhoto() {
-  console.log(currentURL);
+function fetchPhoto() {
   let searchParams = new URLSearchParams(window.location.search);
 
   let photoId = searchParams.get("id");
@@ -123,7 +113,27 @@ async function fetchPhoto() {
       photoContainer.appendChild(card);
       let photoAvgColor = photo.avg_color;
 
+      photoContainer.parentNode.parentNode.style.backgroundColor =
+        photoAvgColor;
+    });
+}
 
-      photoContainer.parentNode.parentNode.style.backgroundColor = photoAvgColor;
+function fillModal(id) {
+  fetch(`https://api.pexels.com/v1/photos/${id}`, {
+    method: "GET",
+    headers: {
+      Authorization: PEXELS_API_KEY,
+    },
+  })
+    .then((response) => response.json())
+    .then((photo) => {
+        let modal = document.querySelector(".modal");
+        modal.querySelector('img').src = photo.src.original;
+        modal.querySelector('img').alt = photo.title;
+        modal.id = photo.id;
+        modal.querySelector('h1').innerText = photo.alt;
+        modal.querySelector('h5').innerText = photo.photographer;
+        const modalInstance = new bootstrap.Modal(modal);
+        modalInstance.show();
     });
 }
