@@ -12,8 +12,3 @@ ul li {
   display: flex;
   justify-content: space-between;
 }
-
-.done{
-  color: green;
-  
-}

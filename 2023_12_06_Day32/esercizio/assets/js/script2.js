@@ -161,11 +161,12 @@ function addRemoveButtons() {
 
 function statefulSignAsDone() {
   taskSpace.addEventListener("click", (e) => {
+    console.log(e.currentTarget)
     e.stopImmediatePropagation();
 
     if (e.target.classList.contains("riga")) {
       let idTask = e.target.nextElementSibling.id.slice(8);
-      console.log(idTask);
+      // console.log(idTask);
 
       if (!e.target.classList.contains("done")) {
         e.target.classList.add("done");
