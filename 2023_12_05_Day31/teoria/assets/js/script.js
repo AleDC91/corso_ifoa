@@ -61,7 +61,7 @@ console.log(fiesta);
 // se voglio aggiungere cose alla classe:
 
 
-Auto.prototype.info = function (){  // verraà applicata a tutti gli oggetti, anche se istanziati prima. Li aggiunge al prototipo
+Auto.prototype.info = function (){  // verrà applicata a tutti gli oggetti, anche se istanziati prima. Li aggiunge al prototipo
     return this.marca  + ' ' + this.modello + ' ' + this.colore
 };
 

@@ -4,7 +4,7 @@ xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
 xhr.send();
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4 && xhr.status === 200) {
-    // cotrollo che la chiamata sia terminata e che sia terminata con successo
+    // controllo che la chiamata sia terminata e che sia terminata con successo
     console.log("operation is complete");
     let json = xhr.responseText; // tramite responseText ho accesso al json che mi invia il server
     let obj = JSON.parse(json); // faccio il parse del json e lo trasformo in un array di oggetti JS
@@ -121,8 +121,3 @@ fetch("https://api.pexels.com/v1/curated", {
   .then((response) => response.json())
   .then((json) => console.log(json.photos))
   .catch((err) => console.log(err));
-
-
-// -----------------------------------------------------
-// --------PROVA DI SALVATAGGIO SU LOCAL STORAGE--------
-// -----------------------------------------------------
