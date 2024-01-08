@@ -6,6 +6,22 @@ axios.defaults.headers.common["X-Auth-Token"] =
 
 let URL = "https://jsonplaceholder.typicode.com/todos/";
 
+// INTERCEPTING REQUESTS AND RESPONSES
+
+axios.interceptors.request.use(
+  (config) => {
+    console.log(
+      `Richiesta ${config.method.toUpperCase()} inviata a ${config.url}`
+    );
+
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+
 getTodos();
 addTodo();
 updateTodo(1);
@@ -98,20 +114,7 @@ function getData() {
 //   })
 //   .catch(err => console.log(err))
 
-// INTERCEPTING REQUESTS AND RESPONSES
 
-axios.interceptors.request.use(
-  (config) => {
-    console.log(
-      `Richiesta ${config.method.toUpperCase()} inviata a ${config.url}`
-    );
-
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
 
 // CUSTOM HEADERS
 
@@ -220,3 +223,67 @@ function getTodosWithTimeout() {
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
   }
+
+
+
+
+  function setupRequestInterceptor() {
+    const requestInterceptor = axios.interceptors.request.use(
+      (config) => {
+        console.log(
+          `Zio becco ${config.method.toUpperCase()} inviata a ${config.url}`
+        );
+        // Restituisci la configurazione della richiesta
+        return config;
+      },
+      (error) => {
+        // Gestione degli errori
+        console.error('Errore nell\'interceptor di richiesta:', error);
+        return Promise.reject(error);
+      }
+    );
+    // Restituisci l'ID dell'interceptor per poterlo rimuovere successivamente se necessario
+    return requestInterceptor;
+  }
+  
+  
+  // Funzione che esegue una chiamata Axios con l'interceptor
+  function makeApiCall() {
+    // Configura l'interceptor
+    const interceptorId = setupRequestInterceptor();
+  
+    // Esegui la tua chiamata API
+    axios.get("https://jsonplaceholder.typicode.com/todos")
+      .then(response => {
+        console.log('Risposta ricevuta:', response.data);
+      })
+      .catch(error => {
+        console.error('Errore nella risposta:', error);
+      })
+      .finally(() => {
+        console.log("rimosso interceptor")
+        // Rimuovi l'interceptor dopo che la chiamata è stata completata
+        axios.interceptors.request.eject(interceptorId);
+      });
+  }
+  
+  // Chiamare la funzione che esegue la chiamata API con l'interceptor
+  makeApiCall();
+
+
+  function makeApiCall2() {
+    // Configura l'interceptor
+    const interceptorId = setupRequestInterceptor();
+  
+    // Esegui la tua chiamata API
+    axios.get("https://jsonplaceholder.typicode.com/users")
+      .then(response => {
+        console.log('Risposta ricevuta:', response.data);
+      })
+      .catch(error => {
+        console.error('Errore nella risposta:', error);
+      })
+
+  }
+
+  makeApiCall2()
