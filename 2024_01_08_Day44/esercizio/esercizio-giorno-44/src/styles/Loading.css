@@ -1,0 +1,45 @@
+.user-placeholder{
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 2px 2px 10px gray;
+    border-radius: 8px;
+    margin-top: 2rem;
+    padding:  0.5rem ;
+}
+h2{
+    margin: 0;
+
+}
+
+.user-placeholder .large-placeholder{
+    height: 1.4rem;
+    background-color: grey;
+    width: 30%;
+    border-radius: 5px;
+    margin: 1.2rem auto;
+    overflow: hidden;
+    animation: placeholderAnimation 1s infinite;
+}
+.user-placeholder .small-placeholder{
+    
+    height: 1rem;
+    background-color: grey;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    animation: placeholderAnimation 1s infinite;
+}
+
+
+@keyframes placeholderAnimation {
+    0% {
+      background-color: #636363;    }
+    50% {
+      background-color: #7e7e7e;
+    }
+    100% {
+      background-color: #636363;
+     
+    }
+  }
