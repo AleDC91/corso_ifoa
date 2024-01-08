@@ -27,7 +27,7 @@ function App() {
         if(res.ok){
           return res.json();
         } else {
-          throw Error("errore nel fetch");
+          throw new Error("errore nel fetch");
         }
       })
       .then((json) => {
@@ -35,7 +35,7 @@ function App() {
         setIsLoading(false)
       })
       .catch(err => {
-        console.log(err);
+        // console.log(err);
         setIsError(true);
         setIsLoading(false);
         setErrorMsg(err.message);

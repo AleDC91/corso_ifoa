@@ -1,13 +1,18 @@
+import { Component } from "react";
 import "../styles/ImageComponent.css"
 
-const ImageComponent = ({ imageData }) => {
-  const { src, alt, title } = imageData;
+class ImageComponent extends Component {
 
-  return (
-    <div className="image-container">
-      <img src={src} alt={alt} title={title}/>
-    </div>
-  );
+
+  render(){
+    return (
+      <div className="image-container">
+        <img src={this.props.imageData.src} alt={this.props.imageData.alt} title={this.props.imageData.title}/>
+      </div>
+    );
+  }
+
+
 };
 
 export default ImageComponent;
