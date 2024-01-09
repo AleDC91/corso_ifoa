@@ -1,0 +1,18 @@
+.book-card{
+    min-width: 100px;
+    max-width: 200px;
+    margin: 0.5rem;
+    padding: 0;
+    border: none;
+    box-shadow: 2px 2px 10px rgb(180, 180, 180);
+
+}
+
+.book-img{
+    width: 100%;
+
+}
+
+.selected{
+    border: 5px solid red;
+}

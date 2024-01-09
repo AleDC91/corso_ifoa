@@ -42,7 +42,6 @@ function App() {
       });
   };
 
-
   useEffect(() => {
     setIsError(false);
     setIsLoading(true)

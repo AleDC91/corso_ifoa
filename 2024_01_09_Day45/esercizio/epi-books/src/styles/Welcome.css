@@ -1,0 +1,22 @@
+.welcome{
+    height: 300px;
+    background-color: beige;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 2px 2px 14px rgb(189, 189, 189);
+}
+h1{
+    font-size: 4rem;
+    margin-bottom: 4rem;
+}
+.subtitle{
+    text-align: end;
+}
+
+h2{
+    font-style: italic;
+}
+p{
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
