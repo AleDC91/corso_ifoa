@@ -7,7 +7,7 @@ export default class Welcome extends Component {
       <div className="welcome">
         <h1>Welcome to EpiBooks</h1>
         <div className="subtitle">
-          <h2> " leggere senza intelliggere è come nulla friggere " </h2>
+          <h2> " leggere senza intelligere è come nulla friggere " </h2>
           <p><i> - Joani - </i></p>
         </div>
       </div>
