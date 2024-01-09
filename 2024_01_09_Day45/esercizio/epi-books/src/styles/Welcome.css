@@ -1,5 +1,5 @@
 .welcome{
-    height: 300px;
+    min-height: 300px;
     background-color: beige;
     padding: 3rem;
     margin-bottom: 2rem;
