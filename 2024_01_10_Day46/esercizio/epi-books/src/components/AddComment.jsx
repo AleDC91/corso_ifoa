@@ -5,54 +5,54 @@ export default class AddComment extends Component {
   state = {
     comment: {
       comment: "",
-      rate: null,
-      elementId: null,
+      rate: "",
+      elementId: "",
     },
   };
 
   handleOnChange = (event) => {
-    this.setState(prevState => ({
+    this.setState(
+      (prevState) => ({
         comment: {
-            ...prevState.comment,
-            [event.target.name]: event.target.value,
-            elementId: this.props.asin
-        }
-    }), 
-    // in teoria questa seconda funzione dovrebbe attendere che set state sia completato
-    () => console.log(this.state.comment)
-);
-    
+          ...prevState.comment,
+          [event.target.name]: event.target.value,
+          elementId: this.props.asin,
+        },
+      }),
+      // in teoria questa seconda funzione dovrebbe attendere che set state sia completato
+      () => console.log(this.state.comment)
+    );
   };
 
-
-  
-
-  handleOnSubmit = (event) => {
-    event.preventDefault()
-    fetch("https://striveschool-api.herokuapp.com/api/comments/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization":
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MTgyZWMwNTgzNTAwMTg1MjJjOTMiLCJpYXQiOjE3MDQ4OTU1OTAsImV4cCI6MTcwNjEwNTE5MH0.aLNeLsVRshO_VXnEdVQqCiyY5UygNVJVXqiupo0xMVg",
-          },
-          body: JSON.stringify(this.state.comment)
-    }).then(res => res.json())
-    .then(json => console.log(json))
-    
-  }
-
+  resetInputFields = () => {
+    this.setState({
+      comment: {
+        comment: "",
+        rate: "",
+        elementId: "",
+      },
+    });
+  };
 
   render() {
-      { console.log(this.props.asin)}
+    {
+      console.log(this.props.asin);
+    }
     return (
-      <Form className="m-3" onSubmit={(event) => this.handleOnSubmit(event) }>
+      <Form
+        className="m-3"
+        onSubmit={(event) => {
+          this.props.handleSubmitComment(event, this.state.comment);
+          this.resetInputFields();
+        }}
+      >
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Lascia un commento </Form.Label>
           <Form.Control
             type="text"
             placeholder="commenta..."
             onChange={this.handleOnChange}
+            value={this.state.comment.comment}
             name="comment"
           />
         </Form.Group>
@@ -63,11 +63,16 @@ export default class AddComment extends Component {
             min="1"
             max="5"
             name="rate"
+            value={this.state.comment.rate}
             onChange={this.handleOnChange}
           />
         </Form.Group>
-       
-        <Button variant="primary" type="submit" disabled={!(this.state.comment.comment && this.state.comment.rate)}>
+
+        <Button
+          variant="primary"
+          type="submit"
+          disabled={!(this.state.comment.comment && this.state.comment.rate)}
+        >
           Submit
         </Button>
       </Form>

@@ -10,27 +10,55 @@ export default class CommentArea extends Component {
   };
 
   handleDeleteComment = (id) => {
-    if(window.confirm("Vuoi davvero eliminare questo bellissimo commento?")){
-    fetch(
-      "https://striveschool-api.herokuapp.com/api/comments/" + id,
-      {
+    if (window.confirm("Vuoi davvero eliminare questo bellissimo commento?")) {
+      fetch("https://striveschool-api.herokuapp.com/api/comments/" + id, {
         method: "DELETE",
         headers: {
           Authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MTgyZWMwNTgzNTAwMTg1MjJjOTMiLCJpYXQiOjE3MDQ4OTU1OTAsImV4cCI6MTcwNjEwNTE5MH0.aLNeLsVRshO_VXnEdVQqCiyY5UygNVJVXqiupo0xMVg",
         },
-      }
-    ).then(res => res.json())
-    .then(json => {
-        const newComments = this.state.comments.filter(comment => comment._id !== id)
-        this.setState({
-            comments: newComments
-        })
-    })}
+      })
+        .then((res) => res.json())
+        .then((json) => {
+          const newComments = this.state.comments.filter(
+            (comment) => comment._id !== id
+          );
+          this.setState({
+            comments: newComments,
+          });
+        });
+    }
+  };
+  handleSubmitComment = (event, newComment) => {
+    event.preventDefault();
+    fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MTgyZWMwNTgzNTAwMTg1MjJjOTMiLCJpYXQiOjE3MDQ4OTU1OTAsImV4cCI6MTcwNjEwNTE5MH0.aLNeLsVRshO_VXnEdVQqCiyY5UygNVJVXqiupo0xMVg",
+      },
+      body: JSON.stringify(newComment),
+    })
+      .then((res) => {
+        console.log(res);
+       return  res.json();
+      })
+      .then((json) => {
+        const comm = {
+          comment: json.comment,
+          elementId: json.elementId,
+          rate: json.rate,
+          _id: json._id
+        };
+        console.log(comm);
+        this.setState((prevState) => ({
+          comments: [...prevState.comments, comm],
+        }));
+      });
   };
 
-  
-  componentDidMount() {
+  getData = () => {
     fetch(
       "https://striveschool-api.herokuapp.com/api/books/" +
         this.props.asin +
@@ -61,6 +89,9 @@ export default class CommentArea extends Component {
         this.setState({ errorMsg: err.message, isCommentLoading: false });
         console.log(err);
       });
+  };
+  componentDidMount() {
+    this.getData();
   }
 
   render() {
@@ -76,7 +107,7 @@ export default class CommentArea extends Component {
         <AddComment
           selected={this.state.selected}
           asin={this.props.book.asin}
-          
+          handleSubmitComment={this.handleSubmitComment}
         />
       </div>
     );
