@@ -25,7 +25,12 @@ export default class CommentArea extends Component {
           );
           this.setState({
             comments: newComments,
+            errorMsg: ""
           });
+        })
+        .catch(err => {
+            console.log(err);
+            this.setState({errorMsg: err.message})
         });
     }
   };
@@ -54,8 +59,12 @@ export default class CommentArea extends Component {
         console.log(comm);
         this.setState((prevState) => ({
           comments: [...prevState.comments, comm],
+          errorMsg: ""
         }));
-      });
+      })
+      .catch(err => {
+        this.setState({errorMsg: err.message})
+      })
   };
 
   getData = () => {
@@ -103,11 +112,13 @@ export default class CommentArea extends Component {
           comments={this.state.comments}
           isCommentLoading={this.state.isCommentLoading}
           handleDeleteComment={this.handleDeleteComment}
+          errorMsg={this.state.errorMsg}
         />
         <AddComment
           selected={this.state.selected}
           asin={this.props.book.asin}
           handleSubmitComment={this.handleSubmitComment}
+          errorMsg={this.state.errorMsg}
         />
       </div>
     );

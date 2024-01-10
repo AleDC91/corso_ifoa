@@ -6,6 +6,6 @@ export default class DeleteCommentButton extends Component {
 
   render() {
     console.log(this.props.id)
-    return <button className="btn btn-danger" onClick={() => this.props.handleDeleteComment(this.props.id)}>elimina </button>;
+    return <button className="btn btn-danger my-4" onClick={() => this.props.handleDeleteComment(this.props.id)}>elimina </button>;
   }
 }
