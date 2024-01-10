@@ -76,6 +76,7 @@ export default class CommentArea extends Component {
         <AddComment
           selected={this.state.selected}
           asin={this.props.book.asin}
+          
         />
       </div>
     );

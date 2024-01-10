@@ -11,7 +11,6 @@ export default class CommentList extends Component {
           this.props.comments.map((comment, index) => (
             <div key={index} className="single-comment d-flex justify-content-between">
               {console.log(comment._id)}
-
               <p>{comment.comment}</p>
               <DeleteCommentButton
                 id={comment._id}

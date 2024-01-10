@@ -6,7 +6,7 @@ export default class AddComment extends Component {
     comment: {
       comment: "",
       rate: null,
-      elementId: this.props.asin,
+      elementId: null,
     },
   };
 
@@ -29,22 +29,23 @@ export default class AddComment extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
-
-    fetch("https://striveschool-api.herokuapp.com/api/books/" + this.props.asin + "/comments ", {
+    fetch("https://striveschool-api.herokuapp.com/api/comments/", {
         method: "POST",
         headers: {
-            Authorization:
+            "Content-Type": "application/json",
+            "Authorization":
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MTgyZWMwNTgzNTAwMTg1MjJjOTMiLCJpYXQiOjE3MDQ4OTU1OTAsImV4cCI6MTcwNjEwNTE5MH0.aLNeLsVRshO_VXnEdVQqCiyY5UygNVJVXqiupo0xMVg",
           },
           body: JSON.stringify(this.state.comment)
-    })
+    }).then(res => res.json())
+    .then(json => console.log(json))
     
   }
 
 
   render() {
+      { console.log(this.props.asin)}
     return (
-        
       <Form className="m-3" onSubmit={(event) => this.handleOnSubmit(event) }>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Lascia un commento </Form.Label>

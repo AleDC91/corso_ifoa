@@ -10,7 +10,7 @@ export default class AllTheBooks extends Component {
   };
 
   componentDidMount() {
-    fetch("./books/fantasy.json")
+    fetch("./books/horror.json")
       .then((resp) => {
         if (!resp.ok) {
           throw new Error("Failed to fetch");
