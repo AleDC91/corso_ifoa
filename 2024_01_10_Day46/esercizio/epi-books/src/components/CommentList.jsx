@@ -20,7 +20,7 @@ export default class CommentList extends Component {
               handleDeleteComment={this.props.handleDeleteComment}
             />
           ))}
-          {!this.props.isCommentLoading && this.props.comments.length === 0 && <p>Non ci sono commenti per questo libro</p>}
+          {!this.props.isCommentLoading && this.props.comments.length === 0 && <p className="text-center fw-bold py-3">Commenta per primo questo libro!</p>}
       </div>
     );
   }

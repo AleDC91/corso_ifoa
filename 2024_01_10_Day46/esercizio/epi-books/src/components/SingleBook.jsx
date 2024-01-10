@@ -33,7 +33,6 @@ export default class SingleBook extends Component {
             <p>{this.props.book.category}</p>
             <p>{this.props.book.price}€</p>
           </Card.Text>
-          <Button variant="primary">link</Button>
         </Card.Body>
         {this.state.selected && <CommentArea selected={this.state.selected} asin={this.props.book.asin} book={this.props.book}/>}
         

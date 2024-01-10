@@ -9,12 +9,15 @@ import Container from "react-bootstrap/esm/Container";
 function App() {
   return (
     <div className="App">
+      <MyNav />
       <Container>
-        <MyNav />
         <Welcome />
-        <AllTheBooks />
-        <MyFooter />
       </Container>
+      <Container fluid>
+        <AllTheBooks />
+      </Container>
+
+      <MyFooter />
     </div>
   );
 }
