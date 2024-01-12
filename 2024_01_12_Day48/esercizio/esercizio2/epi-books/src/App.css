@@ -1,0 +1,13 @@
+.home-page{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.comment-area{
+    position: fixed;
+    bottom:3rem;
+    right: 3rem;
+    max-width: 400px;
+}
