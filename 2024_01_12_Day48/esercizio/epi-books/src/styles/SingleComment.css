@@ -1,0 +1,9 @@
+.single-comment{
+    /* border-bottom: 1px solid grey; */
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(193, 193, 193, 0.292));
+    padding: 0 1rem;
+}
+
+.star, .half-star{
+    color: goldenrod;
+}
