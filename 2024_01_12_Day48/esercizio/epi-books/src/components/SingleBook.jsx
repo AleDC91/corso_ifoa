@@ -14,6 +14,17 @@ export default class SingleBook extends Component {
   toggleSelected = () => {
     this.setState((prevState) => ({ selected: !prevState.selected }));
   };
+
+  
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.book.asin === prevProps.selectedBook && !this.state.selected) {
+      this.setState({ selected: true });
+    } else if (this.props.book.asin !== prevProps.selectedBook && this.state.selected) {
+      this.setState({ selected: false });
+    }
+  }
+
+  
   render() {
     return (
       <Card className={`book-card ${this.state.selected ? "selected" : ""}`}>
