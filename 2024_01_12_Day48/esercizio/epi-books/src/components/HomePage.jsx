@@ -9,16 +9,13 @@ export default function HomePage() {
   const [comments, setComments] = useState([]);
   const [errorMsg, setErrorMsg] = useState("");
   const [isCommentLoading, setIsCommenLoading] = useState(false);
-  const [titleSelected, setTitleSelected] = useState("Seleziona un libro per vedere i commenti")
+  const [titleSelected, setTitleSelected] = useState(
+    "Seleziona un libro per vedere i commenti"
+  );
 
-
-
- useEffect(() => {
-    getData()
- }, [selectedBook])
-
-
-
+  useEffect(() => {
+    getData();
+  }, [selectedBook]);
 
   const handleDeleteComment = (id) => {
     if (window.confirm("Vuoi davvero eliminare questo bellissimo commento?")) {
@@ -73,6 +70,7 @@ export default function HomePage() {
   };
 
   const getData = () => {
+    setIsCommenLoading(true);
     fetch(
       "https://striveschool-api.herokuapp.com/api/books/" +
         selectedBook +
@@ -96,9 +94,10 @@ export default function HomePage() {
         setIsCommenLoading(false);
         if (json) {
           setComments(json);
-        } else {
-          setComments([{ comment: "no comments" }]);
         }
+        // else {
+        //   setComments([{ comment: "no comments" }]);
+        // }
 
         console.log(comments);
       })
@@ -112,6 +111,7 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <AllTheBooks
+        errorMsg={errorMsg}
         books={books}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -125,19 +125,22 @@ export default function HomePage() {
         titleSelected={titleSelected}
         setTitleSelected={setTitleSelected}
       />
-      <CommentArea 
-              books={books}
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              setBooks={setBooks}
-              getData={getData}
-              handleSubmitComment={handleSubmitComment}
-              handleDeleteComment={handleDeleteComment}
-              comments={comments}
-              selectedBook={selectedBook}
-              setSelectedBook={setSelectedBook}
-              titleSelected={titleSelected}
-              setTitleSelected={setTitleSelected}/>
+      <CommentArea
+        errorMsg={errorMsg}
+        isCommentLoading={isCommentLoading}
+        books={books}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        setBooks={setBooks}
+        getData={getData}
+        handleSubmitComment={handleSubmitComment}
+        handleDeleteComment={handleDeleteComment}
+        comments={comments}
+        selectedBook={selectedBook}
+        setSelectedBook={setSelectedBook}
+        titleSelected={titleSelected}
+        setTitleSelected={setTitleSelected}
+      />
     </div>
   );
 }

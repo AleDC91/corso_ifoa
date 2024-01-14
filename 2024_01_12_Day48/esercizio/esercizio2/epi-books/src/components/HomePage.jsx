@@ -9,16 +9,13 @@ export default function HomePage() {
   const [comments, setComments] = useState([]);
   const [errorMsg, setErrorMsg] = useState("");
   const [isCommentLoading, setIsCommenLoading] = useState(false);
-  const [titleSelected, setTitleSelected] = useState("Seleziona un libro per vedere i commenti")
+  const [titleSelected, setTitleSelected] = useState(
+    "Seleziona un libro per vedere i commenti"
+  );
 
-
-
- useEffect(() => {
-    getData()
- }, [selectedBook])
-
-
-
+  useEffect(() => {
+    getData();
+  }, [selectedBook]);
 
   const handleDeleteComment = (id) => {
     if (window.confirm("Vuoi davvero eliminare questo bellissimo commento?")) {
@@ -33,7 +30,7 @@ export default function HomePage() {
         .then((json) => {
           const newComments = comments.filter((comment) => comment._id !== id);
           setComments(newComments);
-          setErrorMsg("errore");
+          setErrorMsg("");
         })
         .catch((err) => {
           console.log(err);
@@ -73,6 +70,7 @@ export default function HomePage() {
   };
 
   const getData = () => {
+    setIsCommenLoading(true)
     fetch(
       "https://striveschool-api.herokuapp.com/api/books/" +
         selectedBook +
@@ -87,7 +85,7 @@ export default function HomePage() {
     )
       .then((res) => {
         if (!res.ok) {
-          setErrorMsg(res.status);
+          setErrorMsg(res.message);
         } else {
           return res.json();
         }
@@ -96,10 +94,7 @@ export default function HomePage() {
         setIsCommenLoading(false);
         if (json) {
           setComments(json);
-        } else {
-          setComments([{ comment: "no comments" }]);
-        }
-
+        } 
         console.log(comments);
       })
       .catch((err) => {
@@ -124,20 +119,25 @@ export default function HomePage() {
         setSelectedBook={setSelectedBook}
         titleSelected={titleSelected}
         setTitleSelected={setTitleSelected}
+        errorMsg={errorMsg}
       />
-      <CommentArea 
-              books={books}
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              setBooks={setBooks}
-              getData={getData}
-              handleSubmitComment={handleSubmitComment}
-              handleDeleteComment={handleDeleteComment}
-              comments={comments}
-              selectedBook={selectedBook}
-              setSelectedBook={setSelectedBook}
-              titleSelected={titleSelected}
-              setTitleSelected={setTitleSelected}/>
+      <CommentArea
+        isCommentLoading={isCommentLoading}
+        books={books}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        setBooks={setBooks}
+        getData={getData}
+        handleSubmitComment={handleSubmitComment}
+        handleDeleteComment={handleDeleteComment}
+        comments={comments}
+        selectedBook={selectedBook}
+        setSelectedBook={setSelectedBook}
+        titleSelected={titleSelected}
+        setTitleSelected={setTitleSelected}
+        errorMsg={errorMsg}
+
+      />
     </div>
   );
 }

@@ -3,6 +3,17 @@ import SingleBook from "./SingleBook";
 import "../styles/AllTheBooks.css";
 import SearchForm from "./SearchForm";
 
+
+
+
+// export default function AllTheBooks() {
+//   return (
+//     <div>AllTheBooks</div>
+//   )
+// }
+
+
+
 export default class AllTheBooks extends Component {
   componentDidMount() {
     fetch("./books/horror.json")

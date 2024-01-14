@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import "../styles/SingleBook.css";
 import CommentArea from "./CommentArea";
 
+
 import { Component } from "react";
 
 export default class SingleBook extends Component {

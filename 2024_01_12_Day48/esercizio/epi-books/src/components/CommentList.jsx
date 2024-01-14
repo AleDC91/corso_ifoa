@@ -8,8 +8,12 @@ export default class CommentList extends Component {
     return (
       <div className="comments-list m-3 ">
         {this.props.isCommentLoading && <LoadingComments />}
-        {this.props.errorMsg && <ErrorComponent errorMsg={this.props.errorMsg}/>}
+        {this.props.errorMsg && (
+          <ErrorComponent errorMsg={this.props.errorMsg} />
+        )}
         {!this.props.isCommentLoading &&
+          this.props.titleSelectd !==
+            "Seleziona un libro per vedere i commenti" &&
           this.props.comments.map((comment, index) => (
             <SingleComment
               comment={comment}
@@ -20,7 +24,15 @@ export default class CommentList extends Component {
               handleDeleteComment={this.props.handleDeleteComment}
             />
           ))}
-          {!this.props.isCommentLoading && this.props.comments.length === 0 && <p className="text-center fw-bold py-3">Commenta per primo questo libro!</p>}
+
+        {!this.props.isCommentLoading &&
+          this.props.comments.length === 0 &&
+          this.props.titleSelectd ===
+            "Seleziona un libro per vedere i commenti" && (
+            <p className="text-center fw-bold py-3">
+              Commenta per primo questo libro!
+            </p>
+          )}
       </div>
     );
   }

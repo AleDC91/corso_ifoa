@@ -44,7 +44,7 @@ export default class AddComment extends Component {
         {this.props.errorMsg && (
           <ErrorComponent errorMsg={this.props.errorMsg} />
         )}
-
+        {this.props.titleSelected !== "Seleziona un libro per vedere i commenti" && 
         <Form
           className="m-3"
           onSubmit={(event) => {
@@ -82,6 +82,7 @@ export default class AddComment extends Component {
             Submit
           </Button>
         </Form>
+        }
       </>
     );
   }
