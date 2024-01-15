@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "phone": "1-770-736-8031 x56442",
+      "website": "hildegard.org"
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "email": "Shanna@melissa.tv",
+      "phone": "010-692-6593 x09125",
+      "website": "anastasia.net"
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "email": "Nathan@yesenia.net",
+      "phone": "1-463-123-4447",
+      "website": "ramiro.info"
+    },
+    {
+      "email": "asdcas@asdcasd.csd",
+      "password": "$2a$10$VJbgZHaOxiW.3VlbugW17Oom8Plrm6Li7qucIqeE40c3oGf9vuyJK",
+      "name": "cadc",
+      "username": "sacasdc",
+      "website": "google.com",
+      "phone": "23232",
+      "id": 4
+    },
+    {
+      "email": "adscas@asdcasdc.sdc",
+      "password": "$2a$10$3gWhw2YSPgwFgOZKcWzvzOYJ0SCylRD49zk2cNRcpbxwP0qonbd.y",
+      "name": "adsc",
+      "username": "asdcas",
+      "phone": "2132134",
+      "website": "asdcadsc.ascasd",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+.settings-page{
+    padding: 0 10rem;
+}
+@media screen and (max-width: 900px){
+    .settings-page{
+        padding: 0 3rem;
+    }
+}
+
+.settings-table{
+
+    border-top: 1px solid rgb(216, 216, 216);
+    border-bottom: 1px solid rgb(216, 216, 216);
+
+}
+
+.bottone-member{
+    background-color: rgb(188, 188, 188) !important;
+    border: none !important;
+}

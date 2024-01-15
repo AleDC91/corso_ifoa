@@ -1,0 +1,21 @@
+.form-genres{
+    width: 110px !important;
+    height: 30px !important;
+    /* color: red !important; */
+    border-radius: 0 !important;
+    font-size: 14px !important;
+    padding: 0 0.3rem !important;
+    background-color: #121212 !important;
+    color: #fff !important;
+    border: 1px solid white ! important;
+    cursor: pointer
+}
+
+.form-genres:focus, .form-genres:active, .form-genres::selection{
+    /* border: none !important;
+    outline: none !important; */
+    box-shadow: none !important;
+}
+select{
+    border-radius: 0 !important;
+}

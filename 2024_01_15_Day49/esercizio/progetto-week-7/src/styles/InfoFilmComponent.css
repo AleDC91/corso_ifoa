@@ -1,0 +1,16 @@
+.info-film {
+    background-color: #141414;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+.compatibility{
+    font-size: 10px;
+    color: rgb(0, 203, 0);
+}
+
+.info-age{
+    font-size: 10px;
+
+    border: 1px solid grey;
+    color: grey;
+}

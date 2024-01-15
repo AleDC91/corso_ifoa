@@ -1,0 +1,19 @@
+.right-nav-btns{
+    position: absolute;
+    right: 0;
+    top: 1rem;
+    margin-right: 2rem ;
+    z-index: 3000;
+}
+
+@media screen and (max-width: 992px) {
+    .right-nav-btns{
+       top: 1rem;
+        margin-right: 7rem ;
+    }
+}
+
+.dropdown-menu .dropdown-item:hover, .sign-out:hover{
+    background-color: white !important;
+    color: black !important;
+}

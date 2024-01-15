@@ -1,0 +1,6 @@
+.show-grid, .menu-right{
+    padding: 0.2rem 0.7rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer
+}

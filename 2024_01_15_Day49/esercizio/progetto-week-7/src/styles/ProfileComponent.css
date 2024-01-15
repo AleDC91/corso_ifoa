@@ -1,0 +1,23 @@
+.tabella-profilo{
+    
+
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-top: 2rem
+}
+
+.profile-page{
+    margin: 0 auto;
+    width: 60%;
+}
+@media screen and (max-width: 800px) {
+    .profile-page{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .profile-page{
+        width: 100%;
+    }
+}

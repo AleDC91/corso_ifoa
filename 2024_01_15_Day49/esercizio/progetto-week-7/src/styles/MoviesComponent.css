@@ -1,0 +1,31 @@
+.movies{
+    /* min-height: 600px; */
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Impedisce la divisione su più righe */
+    overflow-x: auto; 
+    overflow-y: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    scrollbar-width: 5px; 
+    -ms-overflow-style: none; 
+}
+
+
+.btns-container{
+    position: absolute;
+}
+.movies::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .movies::-webkit-scrollbar-thumb {
+    background-color: #302d2d;
+    border-radius: 6px;
+    
+  }
+  
+  .movies::-webkit-scrollbar-track {
+   
+    background-color: #676767;
+  }

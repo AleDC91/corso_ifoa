@@ -1,0 +1,27 @@
+.slide-button.left {
+  position: absolute;
+  height: 100%;
+}
+
+.slide-button.right {
+  position: absolute;
+  height: 100%;
+  right: 50px;
+
+}
+
+.slide-button.left,
+.slide-button.right {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: transparent;
+  z-index: 5;
+}
+.slide-button.left:hover,
+.slide-button.right:hover{
+    color: white;
+    background-color: rgba(1, 1, 1, 0.237);
+    font-size: 2.5rem;
+    transition: font-size linear 0.2s
+} 
