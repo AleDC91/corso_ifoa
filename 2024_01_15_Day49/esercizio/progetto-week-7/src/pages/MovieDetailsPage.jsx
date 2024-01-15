@@ -19,6 +19,7 @@ export default function MovieDetailsPage() {
   const [comments, setComments] = useState();
   const [commentError, setCommentError] = useState();
   const [loadingComments, setLoadingComments] = useState();
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     setLoadingDetails(true);
@@ -74,6 +75,59 @@ export default function MovieDetailsPage() {
       });
   };
 
+  const handleDeleteComment = (id) => {
+    if (window.confirm("Vuoi davvero eliminare questo bellissimo commento?")) {
+      fetch("https://striveschool-api.herokuapp.com/api/comments/" + id, {
+        method: "DELETE",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MTgyZWMwNTgzNTAwMTg1MjJjOTMiLCJpYXQiOjE3MDQ4OTU1OTAsImV4cCI6MTcwNjEwNTE5MH0.aLNeLsVRshO_VXnEdVQqCiyY5UygNVJVXqiupo0xMVg",
+        },
+      })
+        .then((res) => res.json())
+        .then((json) => {
+          const newComments = comments.filter((comment) => comment._id !== id);
+          setComments(newComments);
+          setErrorMsg("");
+        })
+        .catch((err) => {
+          console.log(err);
+          setErrorMsg(err.message);
+        });
+    }
+  };
+
+  const handleSubmitComment = (event, newComment) => {
+    event.preventDefault();
+    fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MTgyZWMwNTgzNTAwMTg1MjJjOTMiLCJpYXQiOjE3MDQ4OTU1OTAsImV4cCI6MTcwNjEwNTE5MH0.aLNeLsVRshO_VXnEdVQqCiyY5UygNVJVXqiupo0xMVg",
+      },
+      body: JSON.stringify(newComment),
+    })
+      .then((res) => {
+        console.log(res);
+        return res.json();
+      })
+      .then((json) => {
+        const comm = {
+          comment: json.comment,
+          elementId: json.elementId,
+          rate: json.rate,
+          _id: json._id,
+        };
+        console.log(comm);
+        setComments([...comments, comm]);
+        setErrorMsg("");
+      })
+      .catch((err) => {
+        setErrorMsg(err.message);
+      });
+  };
+
   return (
     <>
       {singleMovieError && (
@@ -82,24 +136,31 @@ export default function MovieDetailsPage() {
       {loadingDetails && <LoadingDetailsComponent />}
       {movieData && (
         <div className="movie-detail-page text-white">
-          <div>MovieDetailsPage</div>
-          <Card className="movie-details-card w-25 mx-auto bg-dark">
-            <Card.Img
-              variant="top"
-              src={
-                movieData.Poster !== "N/A"
-                  ? movieData.Poster
-                  : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/640px-No-Image-Placeholder.svg.png"
-              }
-              alt={movieData.Title}
+          <h2 className="text-center my-4">{movieData.Title}</h2>
+          <div className="d-flex align-items-center mt-5">
+            <Card className="movie-details-card mx-auto bg-dark">
+              <Card.Img
+                variant="top"
+                src={
+                  movieData.Poster !== "N/A"
+                    ? movieData.Poster
+                    : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/640px-No-Image-Placeholder.svg.png"
+                }
+                alt={movieData.Title}
+              />
+              <Card.Body>
+                <Card.Text className="bg-dark text-white">
+                  {movieData.Title}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <CommentArea
+              comments={comments}
+              handleDeleteComment={handleDeleteComment}
+              handleSubmitComment={handleSubmitComment}
+              id={id}
             />
-            <Card.Body>
-              <Card.Text className="bg-dark text-white">
-                {movieData.Title}
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <CommentArea comments={comments}/>
+          </div>
         </div>
       )}
     </>

@@ -6,25 +6,22 @@ export default function AddComment(props) {
   const [comment, setComment] = useState({
     comment: "",
     rate: "",
-    elementId: props.asin,
+    elementId: props.id,
   });
 
   const handleOnChange = (event) => {
-    setComment(
-      (prevComment) => ({
-        ...prevComment,
-        [event.target.name]: event.target.value,
-      }),
-      // in teoria questa seconda funzione dovrebbe attendere che set state sia completato
-      () => console.log(comment)
-    );
+    setComment({
+      ...comment,
+      [event.target.name]: event.target.value,
+    });
+    console.log(comment)
   };
 
   const resetInputFields = () => {
     setComment({
       comment: "",
       rate: "",
-      elementId: props.asin,
+      elementId: props.id,
     });
   };
 
