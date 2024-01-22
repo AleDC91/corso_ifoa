@@ -1,15 +1,18 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import favouritesReducer from "../reducers/favouritesReducer";
 import jobsReducer from "../reducers/jobsReducer";
-import {thunk} from "redux-thunk"
+import { thunk } from "redux-thunk";
+
+
+
 
 const initialState = {
   favourites: [],
   jobs: {
     jobsList: [],
     loading: false,
-    error: ""
-  }
+    error: "",
+  },
 };
 
 const bigReducer = combineReducers({
@@ -17,4 +20,9 @@ const bigReducer = combineReducers({
   jobs: jobsReducer,
 });
 
-export const store = createStore(bigReducer, initialState, applyMiddleware(thunk));
+export const store = createStore(
+ bigReducer,
+  initialState,
+  applyMiddleware(thunk)
+);
+
